@@ -48,7 +48,7 @@ namespace Maquette
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
-            String requete = $"DELETE  FROM  materiel where IDMATERIEL = {IdMateriel};";
+            String requete = $"DELETE  FROM  materiel where IDMATERIEL = {this.IdMateriel};";
             accesBD.SetData(requete);
         }
 

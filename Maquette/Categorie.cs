@@ -24,19 +24,23 @@ namespace Maquette
         public int IdCategorie { get; set; }
         public void Create()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"Insert into CATEGORIE_MATERIEL   (IDCATEGORIE,CATEGORIE_MATERIEL)  VALUES({this.IdCategorie},'{this.NomCategorie});";
+            accesBD.SetData(requete);
         }
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"DELETE  FROM  CATEGORIE_MATERIEL where IDCATEGORIE = {this.IdCategorie};";
+            accesBD.SetData(requete);
         }
 
         public ObservableCollection<Categorie> FindAll()
         {
             ObservableCollection<Categorie> lesCategories = new ObservableCollection<Categorie>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select IDCATEGORIE, NOMCATEGORIE from CATEGORIE_DE_MATERIEL ;";
+            String requete = "select * from CATEGORIE_DE_MATERIEL ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
@@ -61,7 +65,9 @@ namespace Maquette
 
         public void Update()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"update  materiel SET  CATEGORIE_MATERIEL  = {this.NomCategorie}  where IDCATEGORIE = {this.IdCategorie};";
+            accesBD.SetData(requete);
         }
     }
 }
