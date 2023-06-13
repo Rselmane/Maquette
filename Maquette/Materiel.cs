@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Maquette
 {
-    public class Materiel:Crud<Materiel>
+    public class Materiel : Crud<Materiel>
     {
         public Materiel()
         {
@@ -31,23 +31,19 @@ namespace Maquette
 
         public void Create()
         {
-            ObservableCollection<Materiel> lesMateriels = new ObservableCollection<Materiel>();
+
             DataAccess accesBD = new DataAccess();
-            String requete = "select  IDCATEGORIE, CODEBARRE, NOM,REFERENCECONSTR  from MATERIEL ;";
-            DataTable datas = accesBD.GetData(requete);
-            if (datas != null)
-            {
-                foreach (DataRow row in datas.Rows)
-                {
-                    Materiel m = new Materiel(int.Parse(row["IDCATEGORIE"].ToString()), (String)row["CODEBARRE"], (String)row["NOM"], (String)row["REFERENCECONSTR"], int.Parse(row["IDCATEGORIE"].ToString()));
-                    lesMateriels.Add(m);
-                }
-            }
+      
+            String requete = $"Insert into materiel (IDCATEGORIE,CODEBARRE,NOM,REFERENCECONSTR)  VALUES({ this.IdCategorie},{this.CodeBarre},{this.Nom},{this.ReferenceConstr});";
+             accesBD.SetData(requete);
         }
+    
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"Insert into materiel (IDCATEGORIE,CODEBARRE,NOM,REFERENCECONSTR)  VALUES({this.IdCategorie},{this.CodeBarre},{this.Nom},{this.ReferenceConstr});";
+            accesBD.SetData(requete);
         }
 
         public ObservableCollection<Materiel> FindAll()
