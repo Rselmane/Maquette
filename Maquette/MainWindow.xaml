@@ -1,0 +1,54 @@
+﻿<Window x:Class="Maquette.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Maquette"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="600" MinWidth="500" MinHeight="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="30"/>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Margin="0,40,0,0" Content="Attributions" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center"/>
+        <Label Grid.Column="2" Margin="0,40,0,0" Content="Matériel" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center"/>
+        <ListView x:Name="AttributionAff" Grid.Row="1" Grid.Column="1" MouseDoubleClick="ModifierAttribution">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Materiel" Width="100" DisplayMemberBinding="{Binding MaterielAttribue}"/>
+                    <GridViewColumn Header="Enseignant" Width="100" DisplayMemberBinding="{Binding PersonneResponsable}"/>
+                    <GridViewColumn Header="Enseignant" Width="100" DisplayMemberBinding="{Binding DateAttribution}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Grid.Column="2" Margin="0,270,0,100" Content="Catégories Matériel" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" Grid.Row="1"/>
+        <ListView x:Name="MaterielList" Grid.Row="1" Grid.Column="2" Margin="0,0,0,150" MouseDoubleClick="ModifierMateriel">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Reference" Width="75" DisplayMemberBinding="{Binding ReferenceConstr}"/>
+                    <GridViewColumn Header="CodeBarre" Width="75" DisplayMemberBinding="{Binding CodeBarre}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Afficher toutes les Attributions" RenderTransformOrigin="0.615,0.97" Grid.Row="2" Grid.Column="1" Margin="20,25,20,25"/>
+        <ListView x:Name="CateMateriel" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="110" MouseDoubleClick="ModifierCategorie">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomCategorie}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="2" Grid.Column="2" Margin="0,0,25,0" Content="Ajouter" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Click="ClickAjouter"/>
+    </Grid>
+</Window>

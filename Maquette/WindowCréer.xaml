@@ -1,0 +1,72 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Maquette"
+        xmlns:Xml="clr-namespace:System.Xml;assembly=System.Xml.ReaderWriter" x:Class="Maquette.WindowCréer"
+        mc:Ignorable="d"
+        Title="Ajouter" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl x:Name="AjouterChx">
+            <TabItem Header="Matériel">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Categorie" Margin="5,0,0,0"/>
+                    <ListView x:Name="CategorieMat" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Height="62" Margin="10,30,0,0" Width="155" FontSize="11">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomCategorie}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="Code Barre" Margin="75,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
+                    <Label Content="Nom" Margin="75,145,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
+                    <Label Content="Reference Constructeur" Margin="75,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,225,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Catégorie">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Nom Categorie" Margin="75,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Attribution" Margin="0,0,0,0">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Personne" Margin="5,0,0,0"/>
+                    <ComboBox Padding="10,5,0,0" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0">
+                        <ComboBoxItem Content="Damas Luc"/>
+                        <ComboBoxItem Content="Graziano Emmanuelle"/>
+                        <ComboBoxItem Content="Colin Pascal"/>
+                        <ComboBoxItem Content="Diard Benoit"/>
+                    </ComboBox>
+                    <Label Content="Matériel" Margin="5,70,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <ComboBox Padding="10,5,0,0" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,95,0,0">
+                        <ComboBoxItem Content="APPLE MACBOOK AIR M2"/>
+                        <ComboBoxItem Content="PC PORTABLE ACER"/>
+                        <ComboBoxItem Content="CASQUE AUDIO"/>
+                        <ComboBoxItem Content="KIT CLAVIER SOURIS"/>
+                    </ComboBox>
+                    <Label Content="Commentaire" Margin="75,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
+                    <Label Content="Date Attribution" Margin="75,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="25" Margin="80,225,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Personnel">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Nom" Margin="75,60,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,90,0,0"/>
+                    <Label Content="Prenom" Margin="75,120,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,150,0,0"/>
+                    <Label Content="Adresse Email" Margin="75,180,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,210,0,0"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Width="70" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Content="Annuler" Click="AnnulerCreation"/>
+        <Button Width="70" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Content="Créer"/>
+    </Grid>
+</Window>

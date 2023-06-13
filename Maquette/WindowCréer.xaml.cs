@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace Maquette
+{
+    /// <summary>
+    /// Logique d'interaction pour WindowCréer.xaml
+    /// </summary>
+    public partial class WindowCréer : Window
+    {
+        public WindowCréer()
+        {
+            InitializeComponent();
+
+        }
+
+        private void AnnulerCreation(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void bt_créer_Click(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+    }
+}
