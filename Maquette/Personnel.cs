@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace Maquette
 {
-    public class Enseignant : Crud<Enseignant>
+    public class Personnel : Crud<Personnel>
     {
-        public Enseignant()
+        public Personnel()
         {
         }
 
-        public Enseignant(int idenseignant, string nom, string prenom, string adresseMail)
+        public Personnel(int idPersonnel, string nom, string prenom, string adresseMail)
         {
-            this.Idenseignant = idenseignant;
+            this.IdPersonnel = idPersonnel;
             this.Nom = nom;
             this.Prenom = prenom;
             this.AdresseMail = adresseMail;
         }
 
-        public int Idenseignant { get; set; }
+        public int IdPersonnel { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string AdresseMail { get; set; }
@@ -36,24 +36,24 @@ namespace Maquette
             throw new NotImplementedException();
         }
 
-        public ObservableCollection<Enseignant> FindAll()
+        public ObservableCollection<Personnel> FindAll()
         {
-            ObservableCollection<Enseignant> lesEnseignants = new ObservableCollection<Enseignant>();
+            ObservableCollection<Personnel> lesPersonnels = new ObservableCollection<Personnel>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select IDENSEIGNANT,  NOMENSEIGNANT, PRENOMENSEIGNANT, EMAIL from ENSEIGNANT ;";
+            String requete = "select IDPersonnel, NOMPERSONNEL,  EMAILPERSONNEL , PRENOMPERSONNEL from Personnel ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Enseignant e = new Enseignant(int.Parse(row["IDENSEIGNANT"].ToString()),(String)row["NOMENSEIGNANT"], (String)row["PRENOMENSEIGNANT"], (String)row["EMAIL"]);
-                    lesEnseignants.Add(e);
+                    Personnel e = new Personnel(int.Parse(row["IDPersonnel"].ToString()),(String)row["NOMPersonnel"], (String)row["EMAILPERSONNEL"], (String)row["PRENOMPERSONNEL"]);
+                    lesPersonnels.Add(e);
                 }
             }
-            return lesEnseignants;
+            return lesPersonnels;
         }
 
-        public ObservableCollection<Enseignant> FindBySelection(string criteres)
+        public ObservableCollection<Personnel> FindBySelection(string criteres)
         {
             throw new NotImplementedException();
         }
@@ -65,7 +65,9 @@ namespace Maquette
 
         public void Update()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"update  PERSONNEL  SET  NOMPERSONNEL  = '{this.Nom}' , SET EMAILPERSONNEL = {this.AdresseMail}, SET PRENOMPERSONNEL = '{this.Prenom}'  where IDPersonnel = {this.IdPersonnel};";
+            accesBD.SetData(requete);
         }
     }
 }
