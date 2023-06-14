@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Maquette"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="600" MinWidth="500" MinHeight="500" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="ApplicationData" />
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30"/>
@@ -22,17 +25,17 @@
 
         <Label Grid.Column="1" Margin="0,40,0,0" Content="Attributions" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center"/>
         <Label Grid.Column="2" Margin="0,40,0,0" Content="Matériel" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center"/>
-        <ListView x:Name="AttributionAff" Grid.Row="1" Grid.Column="1" MouseDoubleClick="ModifierAttribution">
+        <ListView x:Name="AttributionAff" ItemsSource="{Binding LesAttributions}" Grid.Row="1" Grid.Column="1" MouseDoubleClick="ModifierAttribution">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Materiel" Width="100" DisplayMemberBinding="{Binding MaterielAttribue}"/>
-                    <GridViewColumn Header="Enseignant" Width="100" DisplayMemberBinding="{Binding PersonneResponsable}"/>
-                    <GridViewColumn Header="Enseignant" Width="100" DisplayMemberBinding="{Binding DateAttribution}"/>
+                    <GridViewColumn Header="Personnel" Width="100" DisplayMemberBinding="{Binding PersonneResponsable}"/>
+                    <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding DateAttribution}"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <Label Grid.Column="2" Margin="0,270,0,100" Content="Catégories Matériel" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" Grid.Row="1"/>
-        <ListView x:Name="MaterielList" Grid.Row="1" Grid.Column="2" Margin="0,0,0,150" MouseDoubleClick="ModifierMateriel">
+        <ListView x:Name="MaterielList"  ItemsSource="{Binding LesMateriels }" Grid.Row="1" Grid.Column="2" Margin="0,0,0,150" MouseDoubleClick="ModifierMateriel">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom}"/>
@@ -42,7 +45,7 @@
             </ListView.View>
         </ListView>
         <Button Content="Afficher toutes les Attributions" RenderTransformOrigin="0.615,0.97" Grid.Row="2" Grid.Column="1" Margin="20,25,20,25"/>
-        <ListView x:Name="CateMateriel" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="110" MouseDoubleClick="ModifierCategorie">
+        <ListView x:Name="CateMateriel"  ItemsSource="{Binding LesCategories }" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="110" MouseDoubleClick="ModifierCategorie">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomCategorie}"/>
