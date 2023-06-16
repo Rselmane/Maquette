@@ -29,25 +29,29 @@ namespace Maquette
 
         public void Create()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"Insert into EST_ATTRIBUE (IDPERSONNEL, IDMATERIEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION) VALUES({this.idEnseignant},{this.idMateriel},'{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}','{this.Commentaire}');";
+            accesBD.SetData(requete);
         }
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"Delete from EST_ATTRIBUE where IDMATERIEL= {this.idMateriel} and IDPERSONNEL= {this.idEnseignant} and DATEATTRIBUTION='{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}';";
+            accesBD.SetData(requete);
         }
 
         public ObservableCollection<Attribution> FindAll()
         {
             ObservableCollection<Attribution> lesAttributs = new ObservableCollection<Attribution>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select IDMATERIEL, IDENSEIGNANT, DATE, COMMENTAIRE from ATTRIBUTION ;";
+            String requete = "select IDPERSONNEL, IDMATERIEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION from EST_ATTRIBUE ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Attribution a = new Attribution(int.Parse(row["IDMATERIEL"].ToString()), int.Parse(row["IDENSEIGNANT"].ToString()),DateTime.Parse(row["DATE"].ToString()), (String)row["COMMENTAIRE"]);
+                    Attribution a = new Attribution(int.Parse(row["IDMATERIEL"].ToString()), int.Parse(row["IDPERSONNEL"].ToString()),DateTime.Parse(row["DATEATTRIBUTION"].ToString()), (String)row["COMMENTAIREATTRIBUTION"]);
                     lesAttributs.Add(a);
                 }
             }
@@ -66,7 +70,9 @@ namespace Maquette
 
         public void Update()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"UPDATE EST_ATTRIBUE SET DATEATTRIBUTION = '{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}', COMMENTAIREATTRIBUTION = '{this.Commentaire}' where IDMATERIEL= {this.idMateriel} and IDPERSONNEL= {this.idEnseignant} and DATEATTRIBUTION='{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}';";
+            accesBD.SetData(requete);
         }
     }
 }

@@ -28,9 +28,9 @@
         <ListView x:Name="AttributionAff" ItemsSource="{Binding LesAttributions}" Grid.Row="1" Grid.Column="1" MouseDoubleClick="ModifierAttribution">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Materiel" Width="100" DisplayMemberBinding="{Binding MaterielAttribue}"/>
-                    <GridViewColumn Header="Personnel" Width="100" DisplayMemberBinding="{Binding PersonneResponsable}"/>
-                    <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding DateAttribution}"/>
+                    <GridViewColumn Header="Materiel" Width="100"  DisplayMemberBinding="{Binding idMateriel}"/>
+                    <GridViewColumn Header="Personnel" Width="100" DisplayMemberBinding="{Binding idEnseignant}"/>
+                    <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding DateAttribution, StringFormat=d}"/>
                 </GridView>
             </ListView.View>
         </ListView>
