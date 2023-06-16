@@ -6,37 +6,36 @@
         xmlns:local="clr-namespace:Maquette"
         mc:Ignorable="d"
         Title="Modifier" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="ApplicationData" />
+    </Window.DataContext>
     <Grid>
         <TabControl x:Name="TabModif">
             <TabItem Header="Matériel">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Categorie" Margin="5,0,0,0"/>
-                    <ComboBox Padding="10,5,0,0" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0">
-                        <ComboBoxItem>IMPRIMANTE</ComboBoxItem>
-                        <ComboBoxItem>PC PORTABLE</ComboBoxItem>
-                        <ComboBoxItem>TOUR ORDINATEUR</ComboBoxItem>
-                        <ComboBoxItem>PERIPHERIQUE</ComboBoxItem>
+                    <ComboBox x:Name="cb_caté" Padding="10,5,0,0" ItemsSource="{Binding LesCategories}" DisplayMemberPath="NomCategorie" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0">
                     </ComboBox>
                     <Label Content="Code Barre" Margin="75,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
+                    <TextBox Width="200"  DataContext="{Binding SelectedItem, ElementName=cb_caté}" Text="{Binding CodeBarre}" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
                     <Label Content="Nom" Margin="75,145,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
+                    <TextBox Width="200"  DataContext="{Binding SelectedItem, ElementName=cb_caté}"  Text="{Binding Nom}"  Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
                     <Label Content="Reference Constructeur" Margin="75,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,225,0,0"/>
+                    <TextBox Width="200" DataContext="{Binding SelectedItem, ElementName=cb_caté}"  Text="{Binding ReferenceConstr}" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,225,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Catégorie">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Nom Categorie" Margin="75,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
+                    <TextBox Width="200" Height="20"  DataContext="{Binding SelectedItem, ElementName=cb_caté}" Text="{Binding NomCategorie}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Attribution" Margin="0,0,0,0">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Personne" Margin="5,0,0,0"/>
-                    <Label x:Name="ContenuEnseignant" Content="Damas Luc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,24,0,0" Background="#FFF7FF00"/>
-                    <Label Content="Matériel" Margin="5,70,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Label x:Name="ContenuMateriel" Content="APPLE MACBOOK AIR M2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,100,0,0" Background="#FFF7FF00"/>
+                    <Label x:Name="ContenuEnseignant" DataContext="{Binding SelectedItem, ElementName=cb_caté}" Content="{Binding Nom}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,24,0,0" Background="#FFF7FF00"/>
+                    <Label  Content="Matériel"  Margin="5,70,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label x:Name="ContenuMateriel" DataContext="{Binding SelectedItem, ElementName=cb_caté}" Content="{Binding Nom}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,100,0,0" Background="#FFF7FF00"/>
                     <Label Content="Commentaire" Margin="75,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
                     <Label Content="Date Attribution" Margin="75,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -46,16 +45,12 @@
             <TabItem Header="Personnel">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Nom" Margin="75,60,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,90,0,0"/>
+                    <TextBox DataContext="{Binding SelectedItem, ElementName=cb_personnel}" Text="{Binding Nom}" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,90,0,0"/>
                     <Label Content="Prenom" Margin="75,120,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,150,0,0"/>
+                    <TextBox DataContext="{Binding SelectedItem, ElementName=cb_personnel}" Text="{Binding AdresseMail}" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,150,0,0"/>
                     <Label Content="Adresse Email" Margin="75,180,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,210,0,0"/>
-                    <ComboBox Padding="10,5,0,0" Width="200" Height="30" VerticalAlignment="Top" Margin="0,20,20,0" HorizontalAlignment="Right">
-                        <ComboBoxItem Content="Damas Luc"/>
-                        <ComboBoxItem Content="Graziano Emmanuelle"/>
-                        <ComboBoxItem Content="Colin Pascal"/>
-                        <ComboBoxItem Content="Diard Benoit"/>
+                    <TextBox DataContext="{Binding SelectedItem, ElementName=cb_personnel}" Text="{Binding Prenom}" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,210,0,0"/>
+                    <ComboBox x:Name="cb_personnel"   ItemsSource="{Binding LesPersonnels}" DisplayMemberPath="Nom" Padding="10,5,0,0" Width="200" Height="30" VerticalAlignment="Top" Margin="0,20,20,0" HorizontalAlignment="Right">
                     </ComboBox>
                 </Grid>
             </TabItem>
