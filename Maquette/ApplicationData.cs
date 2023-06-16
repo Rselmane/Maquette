@@ -10,24 +10,24 @@ namespace Maquette
 {
     internal class ApplicationData
     {
-        //public ObservableCollection<Etudiant> LesEtudiants { get; set; }
-        //ublic ObservableCollection<Groupe> LesGroupes { get; set; }
-        /* public ApplicationData()
+        public ObservableCollection<Materiel> LesMateriels { get; set; }
+        public ObservableCollection<Categorie> LesCategories { get; set; }
+        public ObservableCollection<Personnel> LesPersonnels{ get; set; }
+        public ObservableCollection<Attribution> LesAttributions { get; set; }
+        public ApplicationData()
          {
-             Etudiant e = new Etudiant();
-             Groupe g = new Groupe();
-             LesEtudiants = e.FindAll();
-             LesGroupes = g.FindAll();
+            Materiel e = new Materiel();
+            LesMateriels = e.FindAll();
+            Categorie c =new Categorie();
+            LesCategories = c.FindAll();
+            Attribution a = new Attribution();
+            a.FindAll();
+            Personnel p = new Personnel();
+            LesPersonnels = p.FindAll();
 
-             // pour chaque étudiant, on affecte la référence de son groupe
-             foreach (Etudiant unEtud in LesEtudiants.ToList())
-                 unEtud.UnGroupe = LesGroupes.ToList().Find(g => g.Id == unEtud.FK_IdGroupe);
-
-             // pour chaque groupe, on affecte toutes les références des étudiants appartenant au groupe  
-             foreach (Groupe unGroupe in LesGroupes.ToList())
-                 unGroupe.LesEtudiants = new ObservableCollection<Etudiant>(LesEtudiants.ToList().FindAll(e => e.FK_IdGroupe == unGroupe.Id));
+            
          }
-        */
+        
     }
 
 }

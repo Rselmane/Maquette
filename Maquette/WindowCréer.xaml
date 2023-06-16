@@ -7,12 +7,15 @@
         xmlns:Xml="clr-namespace:System.Xml;assembly=System.Xml.ReaderWriter" x:Class="Maquette.WindowCréer"
         mc:Ignorable="d"
         Title="Ajouter" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="ApplicationData" />
+    </Window.DataContext>
     <Grid>
         <TabControl x:Name="AjouterChx">
             <TabItem Header="Matériel">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Categorie" Margin="5,0,0,0"/>
-                    <ListView x:Name="CategorieMat" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Height="62" Margin="10,30,0,0" Width="155" FontSize="11">
+                    <ListView x:Name="CategorieMat" ItemsSource="{Binding LesCategories}" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Height="62" Margin="10,30,0,0" Width="155" FontSize="11">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomCategorie}"/>
@@ -36,18 +39,11 @@
             <TabItem Header="Attribution" Margin="0,0,0,0">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Personne" Margin="5,0,0,0"/>
-                    <ComboBox Padding="10,5,0,0" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0">
-                        <ComboBoxItem Content="Damas Luc"/>
-                        <ComboBoxItem Content="Graziano Emmanuelle"/>
-                        <ComboBoxItem Content="Colin Pascal"/>
-                        <ComboBoxItem Content="Diard Benoit"/>
+                    <ComboBox Padding="10,5,0,0" ItemsSource="{Binding LesPersonnels}" DisplayMemberPath="Nom" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0">
+
                     </ComboBox>
                     <Label Content="Matériel" Margin="5,70,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <ComboBox Padding="10,5,0,0" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,95,0,0">
-                        <ComboBoxItem Content="APPLE MACBOOK AIR M2"/>
-                        <ComboBoxItem Content="PC PORTABLE ACER"/>
-                        <ComboBoxItem Content="CASQUE AUDIO"/>
-                        <ComboBoxItem Content="KIT CLAVIER SOURIS"/>
+                    <ComboBox Padding="10,5,0,0" ItemsSource="{Binding LesMateriels}" DisplayMemberPath="Nom"  Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,95,0,0">
                     </ComboBox>
                     <Label Content="Commentaire" Margin="75,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
