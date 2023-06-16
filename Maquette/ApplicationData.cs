@@ -40,6 +40,19 @@ namespace Maquette
                 uneAttrib.MaterielAttribution = LesMateriels.ToList().Find(m => m.IdMateriel == uneAttrib.IdMateriel);
                 uneAttrib.PersonnelAttribution = LesPersonnels.ToList().Find(m => m.IdPersonnel == uneAttrib.IdPersonnel);
             }
+            
+            // pour chaque étudiant, on affecte la référence de son groupe
+            foreach (Materiel unMater in LesMateriels.ToList())
+            {
+                unMater.CategorieMat = LesCategories.ToList().Find(c => c.IdCategorie == unMater.FK_IdCategorie);
+            }
+            // pour chaque groupe, on affecte toutes les références des étudiants appartenant au groupe
+            foreach (Categorie uneCate in LesCategories.ToList())
+            {
+                uneCate.LesMateriels = new ObservableCollection<Materiel>(
+                    LesMateriels.ToList().FindAll(m => m.FK_IdCategorie == uneCate.IdCategorie));
+            }
+
 
         }
         
