@@ -30,14 +30,14 @@ namespace Maquette
         public void Create()
         {
             DataAccess accesBD = new DataAccess();
-            String requete = $"Insert into ATTRIBUTION (IDMATERIEL, IDENSEIGNANT, DATE, COMMENTAIRE) VALUES({this.idMateriel},{this.idEnseignant},{this.DateAttribution},{this.Commentaire});";
+            String requete = $"Insert into EST_ATTRIBUE (IDPERSONNEL, IDMATERIEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION) VALUES({this.idEnseignant},{this.idMateriel},'{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}','{this.Commentaire}');";
             accesBD.SetData(requete);
         }
 
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
-            String requete = $"Delete from ATTRIBUTION where IDMATERIEL= {this.idMateriel} and IDENSEIGNANT= {this.idEnseignant} and DATE={this.DateAttribution};";
+            String requete = $"Delete from EST_ATTRIBUE where IDMATERIEL= {this.idMateriel} and IDPERSONNEL= {this.idEnseignant} and DATEATTRIBUTION='{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}';";
             accesBD.SetData(requete);
         }
 
@@ -70,7 +70,9 @@ namespace Maquette
 
         public void Update()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"UPDATE EST_ATTRIBUE SET DATEATTRIBUTION = '{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}', COMMENTAIREATTRIBUTION = '{this.Commentaire}' where IDMATERIEL= {this.idMateriel} and IDPERSONNEL= {this.idEnseignant} and DATEATTRIBUTION='{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}';";
+            accesBD.SetData(requete);
         }
     }
 }
