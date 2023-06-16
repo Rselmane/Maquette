@@ -25,8 +25,23 @@ namespace Maquette
             Personnel p = new Personnel();
             LesPersonnels = p.FindAll();
 
-            
-         }
+            foreach (Personnel unPerso in LesPersonnels.ToList())
+            {
+                unPerso.LesAttributions = new ObservableCollection<Attribution>(
+                    LesAttributions.ToList().FindAll(a => a.IdPersonnel == unPerso.IdPersonnel));
+            }
+            foreach (Materiel unMater in LesMateriels.ToList())
+            {
+                unMater.LesAttributions = new ObservableCollection<Attribution>(
+                    LesAttributions.ToList().FindAll(a => a.IdMateriel == unMater.IdMateriel));
+            }
+            foreach (Attribution uneAttrib in LesAttributions.ToList())
+            {
+                uneAttrib.MaterielAttribution = LesMateriels.ToList().Find(m => m.IdMateriel == uneAttrib.IdMateriel);
+                uneAttrib.PersonnelAttribution = LesPersonnels.ToList().Find(m => m.IdPersonnel == uneAttrib.IdPersonnel);
+            }
+
+        }
         
     }
 

@@ -26,7 +26,7 @@ namespace Maquette
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string AdresseMail { get; set; }
-
+        public ObservableCollection<Attribution> LesAttributions { get; set; }
         public void Create()
         {
             throw new NotImplementedException();
