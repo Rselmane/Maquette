@@ -33,7 +33,9 @@ namespace Maquette
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"DELETE  FROM  Personnel  where IDPersonnel = {this.IdPersonnel};";
+            accesBD.SetData(requete);
         }
 
         public ObservableCollection<Personnel> FindAll()

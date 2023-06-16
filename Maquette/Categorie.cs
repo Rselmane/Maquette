@@ -40,7 +40,7 @@ namespace Maquette
         {
             ObservableCollection<Categorie> lesCategories = new ObservableCollection<Categorie>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select * from CATEGORIE_DE_MATERIEL ;";
+            String requete = "select * from CATEGORIE_MATERIEL  ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {

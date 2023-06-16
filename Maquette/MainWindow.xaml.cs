@@ -27,12 +27,11 @@ namespace Maquette
 
     public partial class MainWindow : Window
     {
-
+        public ObservableCollection<Personnel> LesPersonnels { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
-
 
 
     }

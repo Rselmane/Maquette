@@ -56,15 +56,16 @@ namespace Maquette
         {
             ObservableCollection<Materiel> lesMateriels = new ObservableCollection<Materiel>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select * from MATERIEL ;";
+            String requete = "select IDMATERIEL,CODEBARREINVENTAIRE, NOMMATERIEL,REFERENCECONSTRUCTEURMATERIEL,IDCATEGORIE  from MATERIEL ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Materiel m = new Materiel(int.Parse(row["IDMATERIEL"].ToString()),(String)row["CODEBARREINVENTAIRE"], (String)row["NOMMATERIEL"], (String)row["REFERENCECONSTR"], int.Parse(row["IDCATEGORIE"].ToString()));
+                    Materiel m = new Materiel(int.Parse(row["IDMATERIEL"].ToString()), (String)row["CODEBARREINVENTAIRE"], (String)row["NOMMATERIEL"], (String)row["REFERENCECONSTRUCTEURMATERIEL"], int.Parse(row["IDCATEGORIE"].ToString()));
                     lesMateriels.Add(m);
                 }
+
             }
             return lesMateriels;
         }
