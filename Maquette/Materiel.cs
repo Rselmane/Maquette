@@ -35,6 +35,7 @@ namespace Maquette
         public string ReferenceConstr { get; set; }
         public int FK_IdCategorie { get; set; }
         public ObservableCollection<Attribution> LesAttributions { get; set; }
+        public Categorie CategorieMat { get; set; }
 
         public void Create()
         {

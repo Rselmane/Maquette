@@ -22,6 +22,7 @@ namespace Maquette
 
         public string NomCategorie { get; set; }
         public int IdCategorie { get; set; }
+        public ObservableCollection<Materiel> LesMateriels { get; set; }
         public void Create()
         {
             DataAccess accesBD = new DataAccess();
