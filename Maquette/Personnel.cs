@@ -49,7 +49,7 @@ namespace Maquette
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Personnel e = new Personnel(int.Parse(row["IDPersonnel"].ToString()),(String)row["NOMPersonnel"], (String)row["EMAILPERSONNEL"], (String)row["PRENOMPERSONNEL"]);
+                    Personnel e = new Personnel(int.Parse(row["IDPersonnel"].ToString()), (String)row["NOMPersonnel"], (String)row["PRENOMPERSONNEL"], (String)row["EMAILPERSONNEL"]);
                     lesPersonnels.Add(e);
                 }
             }
