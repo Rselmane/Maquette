@@ -77,7 +77,7 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Nom Categorie" />
-                    <TextBox
+                    <TextBox x:Name="tbCateModif"
                         Width="200"
                         Height="20"
                         Margin="80,120,0,0"
