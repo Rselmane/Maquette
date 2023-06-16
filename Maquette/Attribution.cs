@@ -45,13 +45,13 @@ namespace Maquette
         {
             ObservableCollection<Attribution> lesAttributs = new ObservableCollection<Attribution>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select IDMATERIEL, IDENSEIGNANT, DATE, COMMENTAIRE from ATTRIBUTION ;";
+            String requete = "select IDPERSONNEL, IDMATERIEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION from EST_ATTRIBUE ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Attribution a = new Attribution(int.Parse(row["IDMATERIEL"].ToString()), int.Parse(row["IDENSEIGNANT"].ToString()),DateTime.Parse(row["DATE"].ToString()), (String)row["COMMENTAIRE"]);
+                    Attribution a = new Attribution(int.Parse(row["IDMATERIEL"].ToString()), int.Parse(row["IDPERSONNEL"].ToString()),DateTime.Parse(row["DATEATTRIBUTION"].ToString()), (String)row["COMMENTAIREATTRIBUTION"]);
                     lesAttributs.Add(a);
                 }
             }
