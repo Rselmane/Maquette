@@ -21,7 +21,7 @@ namespace Maquette
             Categorie c =new Categorie();
             LesCategories = c.FindAll();
             Attribution a = new Attribution();
-            a.FindAll();
+            LesAttributions = a.FindAll();
             Personnel p = new Personnel();
             LesPersonnels = p.FindAll();
 
