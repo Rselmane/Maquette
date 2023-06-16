@@ -46,6 +46,12 @@ namespace Maquette
         {
             WindowModifier modifAtt = new WindowModifier();
             modifAtt.TabModif.SelectedIndex = 2;
+            Attribution a = (Attribution)(AttributionAff.SelectedItem);
+            modifAtt.Owner = this;
+            modifAtt.ContenuEnseignant.Content = a.PersonnelAttribution.Nom + " " + a.PersonnelAttribution.Prenom;
+            modifAtt.ContenuMateriel.Content = a.MaterielAttribution.Nom;
+            modifAtt.tb_commentaire.Text = a.Commentaire;
+            modifAtt.dt_atribution.Text = ((DateTime)a.DateAttribution).ToString();
             modifAtt.ShowDialog();
         }
 
@@ -60,6 +66,9 @@ namespace Maquette
         {
             WindowModifier modifCat = new WindowModifier();
             modifCat.TabModif.SelectedIndex = 1;
+            Categorie a = (Categorie)(CateMateriel.SelectedItem);
+            modifCat.Owner = this;
+            modifCat.tbCateModif.Text = a.NomCategorie;
             modifCat.ShowDialog();
         }
     }
