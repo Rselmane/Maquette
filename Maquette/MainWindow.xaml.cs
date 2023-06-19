@@ -35,7 +35,7 @@ namespace Maquette
             InitializeComponent();
 
 
-    }
+        }
 
         private void ClickAjouter(object sender, RoutedEventArgs e)
         {
@@ -69,13 +69,6 @@ namespace Maquette
                 }
                 modifAtt.ShowDialog();
             }
-
-            
-
-
-
-
-            
         }
 
         private void ModifierMateriel(object sender, MouseButtonEventArgs e)
@@ -133,8 +126,6 @@ namespace Maquette
             Personnel p = (Personnel)(ListPers.SelectedItem);
             if (p != null)
             {
-
-
                 WindowModifier modifPers = new WindowModifier();
                 int valeurvalid = 3;
                 modifPers.TabModif.SelectedIndex = valeurvalid;
@@ -154,6 +145,10 @@ namespace Maquette
 
                 modifPers.ShowDialog();
             }
+        }
+        private void Refresh()
+        {
+
         }
     }
 }

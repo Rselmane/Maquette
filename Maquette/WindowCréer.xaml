@@ -7,9 +7,6 @@
         xmlns:Xml="clr-namespace:System.Xml;assembly=System.Xml.ReaderWriter" x:Class="Maquette.WindowCréer"
         mc:Ignorable="d"
         Title="Ajouter" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Window.DataContext>
-        <local:ApplicationData x:Name="ApplicationData" />
-    </Window.DataContext>
     <Grid>
         <TabControl x:Name="AjouterChx">
             <TabItem Header="Matériel">
@@ -35,22 +32,22 @@
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Nom Categorie" Margin="75,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <TextBox x:Name="tb_nomcate" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
-                    <Button x:Name="buttonCreerCat" Width="70" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Content="Créer"/>
+                    <Button x:Name="buttonCreerCat" Width="70" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Content="Créer" Click="CreerCat"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Attribution" Margin="0,0,0,0">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Personne" Margin="5,0,0,0"/>
-                    <ComboBox Padding="10,5,0,0" ItemsSource="{Binding LesPersonnels}" DisplayMemberPath="Nom" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0">
+                    <ComboBox x:Name="cb_AttPersCreer" Padding="10,5,0,0" ItemsSource="{Binding LesPersonnels}" DisplayMemberPath="Nom" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0">
                     </ComboBox>
                     <Label Content="Matériel" Margin="5,70,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <ComboBox Padding="10,5,0,0" ItemsSource="{Binding LesMateriels}" DisplayMemberPath="Nom"  Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,95,0,0">
+                    <ComboBox x:Name="cb_AttMatCreer" Padding="10,5,0,0" ItemsSource="{Binding LesMateriels}" DisplayMemberPath="Nom"  Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,95,0,0">
                     </ComboBox>
                     <Label Content="Commentaire" Margin="75,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
+                    <TextBox x:Name="tb_AttCommCreer" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
                     <Label Content="Date Attribution" Margin="75,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="25" Margin="80,225,0,0"/>
-                    <Button x:Name="buttonCreerAtt" Width="70" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Content="Créer"/>
+                    <DatePicker x:Name="Dp_DateAttCreer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="25" Margin="80,225,0,0"/>
+                    <Button x:Name="buttonCreerAtt" Width="70" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Content="Créer" Click="CreerAtt"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Personnel">
