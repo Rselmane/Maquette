@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Maquette
 {
-    internal class ApplicationData
+    public class ApplicationData
     {
         public ObservableCollection<Materiel> LesMateriels { get; set; }
         public ObservableCollection<Categorie> LesCategories { get; set; }

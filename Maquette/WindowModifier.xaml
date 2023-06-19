@@ -71,14 +71,14 @@
                         Margin="0,0,10,10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Content="Supprimer" />
+                        Content="Supprimer" Click="buttonSupMat_Click" />
                     <Button x:Name="buttonModifMat"
                         Width="70"
                         Height="20"
                         Margin="0,0,0,10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
-                        Content="Modifier" />
+                        Content="Modifier" Click="buttonModifMat_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Catégorie">

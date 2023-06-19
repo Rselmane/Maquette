@@ -28,5 +28,38 @@ namespace Maquette
         {
             Close();
         }
+
+        private void buttonSupMat_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            Materiel m = new Materiel(tb_codebarre.Text,tb_nom.Text,tb_refConst.Text,cb_cate.SelectedIndex);
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous supprimer " + m.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (delete == MessageBoxResult.Yes)
+            {
+                MessageBox.Show("Matériel supprimé avec succès !", "Materiel", MessageBoxButton.OK,MessageBoxImage.Information) ;
+                m.Delete();
+
+
+            }
+
+        }
+
+        private void buttonModifMat_Click(object sender, RoutedEventArgs e)
+        {
+
+            Materiel m = new Materiel(tb_codebarre.Text, tb_nom.Text, tb_refConst.Text, cb_cate.SelectedIndex);
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous modifier  " + m.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (delete == MessageBoxResult.Yes)
+            {
+                MessageBox.Show("Matériel modfié  avec succès !", "Materiel", MessageBoxButton.OK, MessageBoxImage.Information);
+                m.Update();
+
+
+            }
+
+        }
     }
 }
