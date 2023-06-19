@@ -20,7 +20,7 @@
                 <Grid Background="#FFE5E5E5">
                     <Label Margin="5,0,0,0" Content="Categorie" />
                     <ComboBox
-                        x:Name="cb_caté"
+                        x:Name="cb_cate"
                         Width="200"
                         Height="30"
                         Margin="10,25,0,0"
@@ -34,40 +34,37 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Code Barre" />
-                    <TextBox
+                    <TextBox x:Name="tb_codebarre"
                         Width="200"
                         Height="20"
                         Margin="80,120,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        DataContext="{Binding SelectedItem, ElementName=cb_caté}"
-                        Text="{Binding CodeBarre}" />
+                    />
                     <Label
                         Margin="75,145,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Nom" />
-                    <TextBox
+                    <TextBox x:Name="tb_nom"
                         Width="200"
                         Height="20"
                         Margin="80,170,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        DataContext="{Binding SelectedItem, ElementName=cb_caté}"
-                        Text="{Binding Nom}" />
+                      />
                     <Label
                         Margin="75,200,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Reference Constructeur" />
-                    <TextBox
+                    <TextBox x:Name="tb_refConst"
                         Width="200"
                         Height="20"
                         Margin="80,225,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        DataContext="{Binding SelectedItem, ElementName=cb_caté}"
-                        Text="{Binding ReferenceConstr}" />
+                      />
                 </Grid>
             </TabItem>
             <TabItem Header="Catégorie">
@@ -107,7 +104,7 @@
                         VerticalAlignment="Top"
                         Background="#FFF7FF00"
                         Content="{Binding Nom}"
-                        DataContext="{Binding SelectedItem, ElementName=cb_caté}" />
+                        DataContext="{Binding SelectedItem, ElementName=cb_cate}" />
                     <Label
                         Margin="75,140,0,0"
                         HorizontalAlignment="Left"
