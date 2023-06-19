@@ -34,6 +34,10 @@ namespace Maquette
         private Materiel materielAttribution;
         private int idPersonnel;
         private Personnel personnelAttribution;
+        /// <summary>
+        /// Obtient ou définit la DateAttribution –
+        /// Elle doit être une date valide
+        /// </summary>
 
         public DateTime DateAttribution
         {
@@ -47,7 +51,10 @@ namespace Maquette
                 this.dateAttribution = value;
             }
         }
-
+        /// <summary>
+        /// Obtient ou définit le commentaire –
+        /// Elle doit pas être vide
+        /// </summary>
         public string Commentaire
         {
             get
@@ -60,7 +67,9 @@ namespace Maquette
                 this.commentaire = value;
             }
         }
-
+        /// <summary>
+        /// Obtient ou définit l'id du materiel –
+        /// </summary>
         public int IdMateriel
         {
             get
@@ -73,7 +82,9 @@ namespace Maquette
                 this.idMateriel = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  la liste des Materiel pour les Attributions –
+        /// </summary>
         public Materiel MaterielAttribution
         {
             get
@@ -86,7 +97,9 @@ namespace Maquette
                 this.materielAttribution = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  l'id du Personnel
+        /// </summary>
         public int IdPersonnel
         {
             get
@@ -99,7 +112,9 @@ namespace Maquette
                 this.idPersonnel = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  les Attributions des Personnels
+        /// </summary>
         public Personnel PersonnelAttribution
         {
             get

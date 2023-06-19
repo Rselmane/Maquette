@@ -37,7 +37,9 @@ namespace Maquette
         private int fK_IdCategorie;
         private ObservableCollection<Attribution> lesAttributions;
         private Categorie categorieMat;
-
+        /// <summary>
+        /// Obtient l'id du materiel
+        /// </summary>
         public int IdMateriel
         {
             get
@@ -50,7 +52,10 @@ namespace Maquette
                 this.idMateriel = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  le code Barre  du Materiel
+        /// il doit pas être vide
+        /// </summary>
         public string CodeBarre
         {
             get
@@ -63,6 +68,10 @@ namespace Maquette
                 this.codeBarre = value;
             }
         }
+        /// <summary>
+        /// Obtient  le nom du Materiel
+        /// il doit pas être vide
+        /// </summary>
 
         public string Nom
         {
@@ -76,7 +85,10 @@ namespace Maquette
                 this.nom = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  la Reference Constructeur du materiel
+        /// il doit pas être vide
+        /// </summary>
         public string ReferenceConstr
         {
             get
@@ -89,7 +101,9 @@ namespace Maquette
                 this.referenceConstr = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  l'id de la categori
+        /// </summary>
         public int FK_IdCategorie
         {
             get
@@ -102,6 +116,9 @@ namespace Maquette
                 this.fK_IdCategorie = value;
             }
         }
+        /// <summary>
+        /// Obtient  la liste des attriubtions des categories
+        /// </summary>
 
         public ObservableCollection<Attribution> LesAttributions
         {
@@ -116,6 +133,9 @@ namespace Maquette
             }
         }
 
+        /// <summary>
+        /// Obtient  la Categorie des materiaux
+        /// </summary>
         public Categorie CategorieMat
         {
             get
@@ -128,7 +148,9 @@ namespace Maquette
                 this.categorieMat = value;
             }
         }
-
+        /// <summary>
+        /// Creer un Materiel dans la base de donnéss
+        /// </summary>
         public void Create()
         {
 
@@ -137,7 +159,9 @@ namespace Maquette
             String requete = $"Insert into MATERIEL (IDCATEGORIE, NOMMATERIEL,REFERENCECONSTRUCTEURMATERIEL, CODEBARREINVENTAIRE)  VALUES({ this.FK_IdCategorie},'{this.Nom}','{this.ReferenceConstr}','{this.CodeBarre}');";
             accesBD.SetData(requete);
         }
-    
+        /// <summary>
+        /// Supprime un materiel de la base de donnés
+        /// </summary>
 
         public void Delete()
         {
@@ -150,7 +174,10 @@ namespace Maquette
             accesBD.SetData(requete);
 
         }
-
+        /// <summary>
+        /// recupère la liste complète des matériaux de la base de donnés
+        /// </summary>
+        /// <returns> une liste avec  les donnés des matériaux</returns>
         public ObservableCollection<Materiel> FindAll()
         {
             ObservableCollection<Materiel> lesMateriels = new ObservableCollection<Materiel>();
@@ -168,7 +195,10 @@ namespace Maquette
             }
             return lesMateriels;
         }
-
+        /// <summary>
+        /// recupère la liste  des matériaux de la base de donnés à partir d'un critère
+        /// </summary>
+        /// <returns> une liste avec avec le ou les materiels corrspondants </returns>
         public ObservableCollection<Materiel> FindBySelection(string criteres)
         {
             ObservableCollection<Materiel> leMateriel = new ObservableCollection<Materiel>();
@@ -192,7 +222,9 @@ namespace Maquette
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// met à jour dans la base donné un matériel
+        /// </summary>
         public void Update()
         {
             DataAccess accesBD = new DataAccess();

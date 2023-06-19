@@ -30,7 +30,10 @@ namespace Maquette
         private string nomCategorie;
         private int  idCategorie;
         private ObservableCollection<Materiel> lesMateriels;
-
+        /// <summary>
+        /// Obtient  le nom de la categorie
+        /// il doit pas être vide
+        /// </summary>
         public string NomCategorie
         {
             get
@@ -43,6 +46,9 @@ namespace Maquette
                 this.nomCategorie = value;
             }
         }
+        /// <summary>
+        /// Obtient l'id de la categorie
+        /// </summary>
 
         public int IdCategorie
         {
@@ -56,7 +62,9 @@ namespace Maquette
                 this.idCategorie = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  la liste des Materiaux 
+        /// </summary>
         public ObservableCollection<Materiel> LesMateriels
         {
             get

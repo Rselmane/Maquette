@@ -38,6 +38,9 @@ namespace Maquette
         private string prenom;
         private string adresseMail;
         private ObservableCollection<Attribution> lesAttributions;
+        /// <summary>
+        /// Obtient l'id du personel
+        /// </summary>
 
         public int IdPersonnel
         {
@@ -52,6 +55,10 @@ namespace Maquette
             }
         }
 
+        /// <summary>
+        /// Obtient  le nom du Personnel
+        /// il doit pas être vide
+        /// </summary>
         public string Nom
         {
             get
@@ -64,7 +71,10 @@ namespace Maquette
                 this.nom = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  le prenom du Personnel
+        /// il doit pas être vide
+        /// </summary>
         public string Prenom
         {
             get
@@ -77,7 +87,10 @@ namespace Maquette
                 this.prenom = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  l'adresse-Mail du personnel
+        /// il doit pas être vide
+        /// </summary>
         public string AdresseMail
         {
             get
@@ -90,7 +103,9 @@ namespace Maquette
                 this.adresseMail = value;
             }
         }
-
+        /// <summary>
+        /// Obtient  la liste des attriubtions du Personnel
+        /// </summary>
         public ObservableCollection<Attribution> LesAttributions
         {
             get
@@ -103,6 +118,9 @@ namespace Maquette
                 this.lesAttributions = value;
             }
         }
+        /// <summary>
+        /// créer un personnel dans la base de donnés
+        /// </summary>
 
         public void Create()
         {
@@ -110,6 +128,9 @@ namespace Maquette
             String requete = $"Insert into PERSONNEL (IDPERSONNEL, NOMPERSONNEL, PRENOMPERSONNEL, EMAILPERSONNEL)  VALUES({this.IdPersonnel}, '{this.Nom}','{this.Prenom}, '{this.AdresseMail}');";
             accesBD.SetData(requete);
         }
+        /// <summary>
+        ///supprime un personnel dans la base de donnés
+        /// </summary>
 
         public void Delete()
         {
