@@ -34,6 +34,10 @@ namespace Maquette
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
+            foreach (Materiel matsup in this.LesMateriels)
+            {
+                matsup.Delete();
+            }
             String requete = $"DELETE FROM CATEGORIE_MATERIEL where IDCATEGORIE = {this.IdCategorie};";
             accesBD.SetData(requete);
         }

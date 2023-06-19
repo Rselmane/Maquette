@@ -47,8 +47,13 @@ namespace Maquette
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
+            foreach(Attribution attsup in this.LesAttributions)
+            {
+                attsup.Delete();
+            }
             String requete = $"DELETE  FROM  materiel where IDMATERIEL = {this.IdMateriel};";
             accesBD.SetData(requete);
+
         }
 
         public ObservableCollection<Materiel> FindAll()
