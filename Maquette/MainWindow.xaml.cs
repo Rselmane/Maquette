@@ -138,7 +138,7 @@ namespace Maquette
             {
 
 
-                WindowModifier modifPers = new WindowModifier(p);
+                WindowModifier modifPers = new WindowModifier();
                 int valeurvalid = 3;
                 modifPers.TabModif.SelectedIndex = valeurvalid;
                 bool[] tabIndex = new bool[4];
