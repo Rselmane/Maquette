@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Maquette"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="600" MinWidth="500" MinHeight="500" WindowStartupLocation="CenterScreen">
+        Title="MatInfo" Height="600" Width="600" MinWidth="500" MinHeight="500" WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <local:ApplicationData x:Name="ApplicationData" />
     </Window.DataContext>
