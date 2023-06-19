@@ -44,7 +44,7 @@ namespace Maquette
                 {
                     MessageBox.Show("Matériel supprimé avec succès !", "Materiel", MessageBoxButton.OK, MessageBoxImage.Information);
                     ((Materiel)this.DataContext).Delete();
-
+                    Close();
 
                 }
             
@@ -71,10 +71,10 @@ namespace Maquette
             {
                 ((Materiel)this.DataContext).Update();
                 MessageBox.Show("Matériel modfié  avec succès !", "Materiel", MessageBoxButton.OK, MessageBoxImage.Information);
+                Close();
 
 
-
-            }
+                }
         }
 
         }
@@ -90,7 +90,7 @@ namespace Maquette
                 {
                     MessageBox.Show(" Catégorie  Supprimé  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
                     ((Categorie)this.DataContext).Delete();
-
+                    Close();
 
                 }
             
@@ -113,7 +113,7 @@ namespace Maquette
                 {
                     MessageBox.Show(" Catégorie  modifié  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
                     ((Categorie)this.DataContext).Delete();
-
+                    Close();
 
                 }
             }
@@ -130,7 +130,7 @@ namespace Maquette
             {
                 MessageBox.Show(" Attribution  supprimé  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
                 ((Categorie)this.DataContext).Delete();
-
+                Close();
 
             }
         }
@@ -151,7 +151,7 @@ namespace Maquette
                 {
                     MessageBox.Show(" personnel  modifié  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
                     ((Personnel)this.DataContext).Update();
-
+                    Close();
                 }
             }
 
@@ -172,11 +172,17 @@ namespace Maquette
                 {
                     MessageBox.Show(" attribution  modifié  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
                     ((Personnel)this.DataContext).Update();
+                    Close();
 
                 }
             }
         }
 
+        private void FermetureFenetreModifier(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow fenPrinc = new MainWindow();
+            fenPrinc.Show();
+        }
     }
     }
 

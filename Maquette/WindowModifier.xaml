@@ -10,7 +10,7 @@
     Height="400"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Closing="FermetureFenetreModifier">
     <!--<Window.DataContext>
         <local:ApplicationData x:Name="ApplicationData" />
     </Window.DataContext>-->
@@ -199,7 +199,6 @@
                         Content="Supprimer" />
                     <Button
                         x:Name="buttonModifAtt"
-                        Grid.Column="1"
                         Width="70"
                         Height="20"
                         Margin="63,0,0,10"
