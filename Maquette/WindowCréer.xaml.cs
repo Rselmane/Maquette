@@ -21,10 +21,10 @@ namespace Maquette
     /// </summary>
     public partial class WindowCréer : Window
     {
-        public WindowCréer()
+        public WindowCréer(Window owner)
         {
+            this.DataContext = owner.DataContext;
             InitializeComponent();
-            object obj = new object();
         }
 
         private void AnnulerCreation(object sender, RoutedEventArgs e)
@@ -34,7 +34,9 @@ namespace Maquette
 
         private void CreerMat(object sender, RoutedEventArgs e)
         {
-            ((Materiel)this.DataContext).Create();
+            Materiel m = new Materiel(tb_CodeBarreCreer.Text, tb_NomCreer.Text, tb_RefConstructeurCreer.Text, ((Categorie)CategorieMat.SelectedItem).IdCategorie);
+            m.Create();
+            Close();
         }
 
         private void CreerCat(object sender, RoutedEventArgs e)
@@ -46,7 +48,7 @@ namespace Maquette
 
         private void CreerAtt(object sender, RoutedEventArgs e)
         {
-            Attribution a = new Attribution(cb_AttPersCreer.SelectedIndex, cb_AttMatCreer.SelectedIndex, DateTime.Parse(Dp_DateAttCreer.Text), tb_AttCommCreer.Text);
+            Attribution a = new Attribution(((Personnel)cb_AttPersCreer.SelectedItem).IdPersonnel, ((Materiel)cb_AttMatCreer.SelectedItem).IdMateriel, DateTime.Parse(Dp_DateAttCreer.Text), tb_AttCommCreer.Text);
             a.Create();
             Close();
         }

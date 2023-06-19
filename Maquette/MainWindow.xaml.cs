@@ -33,13 +33,11 @@ namespace Maquette
         public MainWindow()
         {
             InitializeComponent();
-
-
         }
 
         private void ClickAjouter(object sender, RoutedEventArgs e)
         {
-            WindowCréer creation = new WindowCréer();
+            WindowCréer creation = new WindowCréer(this);
             creation.ShowDialog();
         }
 
@@ -129,7 +127,7 @@ namespace Maquette
             Personnel p = (Personnel)(ListPers.SelectedItem);
             if (p != null)
             {
-                WindowModifier modifPers = new WindowModifier();
+                WindowModifier modifPers = new WindowModifier(p);
                 int valeurvalid = 3;
                 modifPers.TabModif.SelectedIndex = valeurvalid;
                 bool[] tabIndex = new bool[4];
