@@ -8,12 +8,20 @@ using System.Threading.Tasks;
 
 namespace Maquette
 {
+
     public class Personnel : Crud<Personnel>
     {
+        /// <summary>
+        /// Stocke 4 infomations :
+        /// 1 entier : ID du personnel
+        /// 3 string : Nom, prénom et l'adresse mail
+        /// Il y a une Collection Observable
+        /// </summary>
         public Personnel()
         {
         }
 
+        //Constructeur complet
         public Personnel(int idPersonnel, string nom, string prenom, string adresseMail)
         {
             this.IdPersonnel = idPersonnel;
@@ -21,7 +29,7 @@ namespace Maquette
             this.Prenom = prenom;
             this.AdresseMail = adresseMail;
         }
-
+        //Constructeur sans ID
         public Personnel(string nom, string prenom, string adresseMail) : this (0, nom, prenom, adresseMail) { }
 
         public int IdPersonnel { get; set; }
@@ -40,11 +48,9 @@ namespace Maquette
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
-            Personnel p = new Personnel();
-            ObservableCollection<Personnel> PersListe = p.FindBySelection($"IDPERSONNEL = {this.IdPersonnel}");
-            foreach (Personnel perssup in PersListe)
+            foreach (Attribution attsup in this.LesAttributions)
             {
-                perssup.Delete();
+                attsup.Delete();
             }
             String requete = $"DELETE  FROM  Personnel  where IDPersonnel = {this.IdPersonnel};";
             accesBD.SetData(requete);

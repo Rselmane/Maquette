@@ -47,9 +47,7 @@ namespace Maquette
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
-            Attribution a = new Attribution();
-            ObservableCollection<Attribution> attListe = a.FindBySelection($"IDMATERIEL = {this.IdMateriel}");
-            foreach(Attribution attsup in attListe)
+            foreach(Attribution attsup in this.LesAttributions)
             {
                 attsup.Delete();
             }
