@@ -38,8 +38,6 @@ namespace Maquette
             Materiel m = new Materiel(tb_CodeBarreCreer.Text, tb_NomCreer.Text, tb_RefConstructeurCreer.Text, ((Categorie)CategorieMat.SelectedItem).IdCategorie);
             m.Create();
             Close();
-            MainWindow fenPrinc = new MainWindow();
-            fenPrinc.Show();
         }
 
         private void CreerCat(object sender, RoutedEventArgs e)
@@ -47,8 +45,6 @@ namespace Maquette
             Categorie c = new Categorie(tb_nomcate.Text);
             c.Create();
             Close();
-            MainWindow fenPrinc = new MainWindow();
-            fenPrinc.Show();
         }
 
         private void CreerAtt(object sender, RoutedEventArgs e)
@@ -56,8 +52,6 @@ namespace Maquette
             Attribution a = new Attribution(((Personnel)cb_AttPersCreer.SelectedItem).IdPersonnel, ((Materiel)cb_AttMatCreer.SelectedItem).IdMateriel, DateTime.Parse(Dp_DateAttCreer.Text), tb_AttCommCreer.Text);
             a.Create();
             Close();
-            MainWindow fenPrinc = new MainWindow();
-            fenPrinc.Show();
         }
 
         private void CreerPers(object sender, RoutedEventArgs e)
@@ -65,6 +59,10 @@ namespace Maquette
             Personnel p = new Personnel(NomPersCreer.Text, PrenomPersCreer.Text, MailPersCreer.Text);
             p.Create();
             Close();
+        }
+
+        private void FermetureFenetreCreation(object sender, System.ComponentModel.CancelEventArgs e)
+        {
             MainWindow fenPrinc = new MainWindow();
             fenPrinc.Show();
         }

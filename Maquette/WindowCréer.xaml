@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Maquette"
         xmlns:Xml="clr-namespace:System.Xml;assembly=System.Xml.ReaderWriter" x:Class="Maquette.WindowCréer"
         mc:Ignorable="d"
-        Title="Ajouter" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Ajouter" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="FermetureFenetreCreation">
     <Grid>
         <TabControl x:Name="AjouterChx">
             <TabItem Header="Matériel">
