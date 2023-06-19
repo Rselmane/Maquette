@@ -100,7 +100,7 @@
                         Margin="0,0,10,10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Content="Supprimer" />
+                        Content="Supprimer" Click="buttonSupCat_Click" />
                     <Button x:Name="buttonModifCat"
                         Width="70"
                         Height="20"
