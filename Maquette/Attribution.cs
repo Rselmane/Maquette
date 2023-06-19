@@ -14,16 +14,12 @@ namespace Maquette
         {
         }
 
-        public Attribution(int idPersonnel, int idMateriel, DateTime dateAttribution)
+        public Attribution(int idPersonnel, int idMateriel, DateTime dateAttribution, string commentaire)
         {
-            IdPersonnel = idPersonnel;
-            IdMateriel = idMateriel;
             DateAttribution = dateAttribution;
-        }
-
-        public Attribution(int idPersonnel, int idMateriel, DateTime dateAttribution, string commentaire) : this(idPersonnel, idMateriel, dateAttribution)
-        {
             Commentaire = commentaire;
+            IdMateriel = idMateriel;
+            IdPersonnel = idPersonnel;
         }
 
         public DateTime DateAttribution { get; set; }

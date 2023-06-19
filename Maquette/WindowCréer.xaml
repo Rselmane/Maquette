@@ -23,11 +23,11 @@
                         </ListView.View>
                     </ListView>
                     <Label Content="Code Barre" Margin="75,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
+                    <TextBox x:Name="tb_CodeBarreCreer" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
                     <Label Content="Nom" Margin="75,145,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
+                    <TextBox x:Name="tb_NomCreer" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
                     <Label Content="Reference Constructeur" Margin="75,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,225,0,0"/>
+                    <TextBox x:Name="tb_RefConstructeurCreer" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,225,0,0"/>
                     <Button x:Name="buttonCreerMat" Width="70" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Content="Créer" Click="CreerMat"/>
                 </Grid>
             </TabItem>
