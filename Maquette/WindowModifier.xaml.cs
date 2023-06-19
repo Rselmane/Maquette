@@ -85,7 +85,7 @@ namespace Maquette
         private void buttonModifCat_Click(object sender, RoutedEventArgs e)
         {
 
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Attribution)this.DataContext).NomCategorie + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Attribution)this.DataContext).MaterielAttribution.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (delete == MessageBoxResult.Yes)
             {
@@ -112,22 +112,6 @@ namespace Maquette
             }
         }
 
-        private void tb_NomPers_TextChanged(object sender, TextChangedEventArgs e)
-        {
-         /*   Personnel p = new Personnel(idperso, tb_NomPers.Text, tb_PrenomPers.Text, tb_MailPers.Text);
-
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous Supprimer   " + p.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-            if (delete == MessageBoxResult.Yes)
-            {
-                MessageBox.Show(" personnel  supprimé  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
-                p.Delete();
-
-
-            }
-         */
-
-        }
 
         private void buttonModifPer_Click(object sender, RoutedEventArgs e)
         {

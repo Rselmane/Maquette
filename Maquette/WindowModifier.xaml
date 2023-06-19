@@ -199,8 +199,7 @@
                         Margin="80,90,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Text="{Binding Nom}"
-                        TextChanged="tb_NomPers_TextChanged" />
+                        Text="{Binding Nom}" />
                     <Label
                         Margin="75,120,0,0"
                         HorizontalAlignment="Left"
