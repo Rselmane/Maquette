@@ -107,7 +107,7 @@
                         Margin="0,0,0,10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
-                        Content="Modifier" />
+                        Content="Modifier" Click="buttonModifCat_Click" />
                 </Grid>
             </TabItem>
             <TabItem Margin="0,0,0,0" Header="Attribution">
@@ -163,7 +163,7 @@
                         Margin="0,0,10,10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Content="Supprimer" />
+                        Content="Supprimer" Click="buttonSupAtt_Click" />
                     <Button x:Name="buttonModifAtt"
                         Width="70"
                         Height="20"

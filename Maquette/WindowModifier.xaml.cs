@@ -64,12 +64,42 @@ namespace Maquette
 
         private void buttonSupCat_Click(object sender, RoutedEventArgs e)
         {
+             Categorie c = new Categorie(tbCateModif.Text);
 
-           
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous Surppimer   " + c.NomCategorie + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (delete == MessageBoxResult.Yes)
+            {
+                MessageBox.Show(" Catégorie  Supprimé  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
+                c.Delete();
 
 
             }
 
         }
+
+        private void buttonModifCat_Click(object sender, RoutedEventArgs e)
+        {
+            Categorie c = new Categorie(tbCateModif.Text);
+
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + c.NomCategorie + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (delete == MessageBoxResult.Yes)
+            {
+                MessageBox.Show(" Catégorie  modifié  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
+                c.Delete();
+
+
+            }
+
+        }
+
+        private void buttonSupAtt_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
-}
+
+        }
+    
+
