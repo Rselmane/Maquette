@@ -29,6 +29,7 @@ namespace Maquette
         public string Prenom { get; set; }
         public string AdresseMail { get; set; }
         public ObservableCollection<Attribution> LesAttributions { get; set; }
+
         public void Create()
         {
             DataAccess accesBD = new DataAccess();

@@ -24,10 +24,7 @@ namespace Maquette
             FK_IdCategorie = fK_IdCategorie;
         }
 
-        public Materiel(string codeBarre, string nom, string referenceConstr, int fK_IdCategorie) : this(0, codeBarre, nom, referenceConstr, fK_IdCategorie) 
-        {
-            
-        }
+        public Materiel(string codeBarre, string nom, string referenceConstr, int fK_IdCategorie) : this(0, codeBarre, nom, referenceConstr, fK_IdCategorie) {  }
 
         public int IdMateriel { get; set; }
         public string CodeBarre { get; set; }
