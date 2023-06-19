@@ -32,6 +32,7 @@ namespace Maquette
         public Materiel MaterielAttribution { get; set; }
         public int IdPersonnel { get; set; }
         public Personnel PersonnelAttribution { get; set; }
+
         public void Create()
         {
             DataAccess accesBD = new DataAccess();
@@ -65,7 +66,19 @@ namespace Maquette
 
         public ObservableCollection<Attribution> FindBySelection(string criteres)
         {
-            throw new NotImplementedException();
+            ObservableCollection<Attribution> lesAttributs = new ObservableCollection<Attribution>();
+            DataAccess accesBD = new DataAccess();
+            String requete = "select IDPERSONNEL, IDMATERIEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION from EST_ATTRIBUE where " + criteres + " ;";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                foreach (DataRow row in datas.Rows)
+                {
+                    Attribution a = new Attribution(int.Parse(row["IDPERSONNEL"].ToString()), int.Parse(row["IDMATERIEL"].ToString()), DateTime.Parse(row["DATEATTRIBUTION"].ToString()), (String)row["COMMENTAIREATTRIBUTION"]);
+                    lesAttributs.Add(a);
+                }
+            }
+            return lesAttributs;
         }
 
         public void Read()

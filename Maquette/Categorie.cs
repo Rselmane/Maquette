@@ -26,14 +26,14 @@ namespace Maquette
         public void Create()
         {
             DataAccess accesBD = new DataAccess();
-            String requete = $"Insert into CATEGORIE_MATERIEL   (IDCATEGORIE,CATEGORIE_MATERIEL)  VALUES({this.IdCategorie},'{this.NomCategorie});";
+            String requete = $"Insert into CATEGORIE_MATERIEL (NOMCATEGORIE) VALUES('{this.NomCategorie}');";
             accesBD.SetData(requete);
         }
 
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
-            String requete = $"DELETE  FROM  CATEGORIE_MATERIEL where IDCATEGORIE = {this.IdCategorie};";
+            String requete = $"DELETE FROM CATEGORIE_MATERIEL where IDCATEGORIE = {this.IdCategorie};";
             accesBD.SetData(requete);
         }
 
@@ -41,7 +41,7 @@ namespace Maquette
         {
             ObservableCollection<Categorie> lesCategories = new ObservableCollection<Categorie>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select * from CATEGORIE_MATERIEL  ;";
+            String requete = "select * from CATEGORIE_MATERIEL;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
@@ -56,7 +56,19 @@ namespace Maquette
 
         public ObservableCollection<Categorie> FindBySelection(string criteres)
         {
-            throw new NotImplementedException();
+            ObservableCollection<Categorie> lesCategories = new ObservableCollection<Categorie>();
+            DataAccess accesBD = new DataAccess();
+            String requete = "select * from CATEGORIE_MATERIEL where " + criteres + " ;";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                foreach (DataRow row in datas.Rows)
+                {
+                    Categorie c = new Categorie((String)row["NOMCATEGORIE"], int.Parse(row["IDCATEGORIE"].ToString()));
+                    lesCategories.Add(c);
+                }
+            }
+            return lesCategories;
         }
 
         public void Read()
@@ -67,7 +79,7 @@ namespace Maquette
         public void Update()
         {
             DataAccess accesBD = new DataAccess();
-            String requete = $"update  materiel SET  CATEGORIE_MATERIEL  = {this.NomCategorie}  where IDCATEGORIE = {this.IdCategorie};";
+            String requete = $"update CATEGORIE_MATERIEL SET NOMCATEGORIE = '{this.NomCategorie}' where IDCATEGORIE = {this.IdCategorie};";
             accesBD.SetData(requete);
         }
     }
