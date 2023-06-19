@@ -34,7 +34,9 @@ namespace Maquette
 
         private void CreerMat(object sender, RoutedEventArgs e)
         {
-            //Materiel m = new Categorie()
+            Materiel m = new Materiel(tb_CodeBarreCreer.Text, tb_NomCreer.Text, tb_RefConstructeurCreer.Text, CategorieMat.SelectedIndex);
+            m.Create();
+            Close();
         }
     }
 }
