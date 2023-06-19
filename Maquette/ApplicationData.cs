@@ -20,7 +20,7 @@ namespace Maquette
             Materiel e = new Materiel();
             LesMateriels = e.FindAll();
             // récupération de toutes les catégories de la base de donnée
-            Categorie c =new Categorie();
+            Categorie c = new Categorie();
             LesCategories = c.FindAll();
             // récupération de toutes les attributions de la base de donnée
             Attribution a = new Attribution();
@@ -61,7 +61,6 @@ namespace Maquette
                 uneCate.LesMateriels = new ObservableCollection<Materiel>(
                     LesMateriels.ToList().FindAll(m => m.FK_IdCategorie == uneCate.IdCategorie));
             }
-
 
         }
         

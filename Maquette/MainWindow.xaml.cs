@@ -39,6 +39,7 @@ namespace Maquette
         {
             WindowCréer creation = new WindowCréer(this);
             creation.ShowDialog();
+            Close();
         }
 
         private void ModifierAttribution(object sender, MouseButtonEventArgs e)
@@ -69,8 +70,9 @@ namespace Maquette
             if (m != null)
             {
                 WindowModifier modifMat = new WindowModifier(m);
+                modifMat.cb_cate.DataContext = this.DataContext;
+                modifMat.cb_cate.SelectedItem = m.CategorieMat;
                 int valeurvalid = 0;
-                modifMat.Owner = this;
                 bool[] tabIndex = new bool[4];
                 tabIndex[valeurvalid] = true;
 
@@ -127,9 +129,12 @@ namespace Maquette
                 modifPers.ShowDialog();
             }
         }
-        private void Refresh()
+        /*public void Refresh()
         {
-
-        }
+            CateMateriel.Items.Refresh();
+            MaterielList.Items.Refresh();
+            ListPers.Items.Refresh();
+            AttributionAff.Items.Refresh();
+        }*/
     }
 }
