@@ -42,8 +42,8 @@ namespace Maquette
 
             DataAccess accesBD = new DataAccess();
       
-            String requete = $"Insert into materiel (IDCATEGORIE,CODEBARREINVENTAIRE,NOMMATERIEL,REFERENCECONSTRUCTEURMATERIEL)  VALUES({ this.FK_IdCategorie},'{this.CodeBarre}','{this.Nom}','{this.ReferenceConstr}');";
-             accesBD.SetData(requete);
+            String requete = $"Insert into MATERIEL (IDCATEGORIE, NOMMATERIEL,REFERENCECONSTRUCTEURMATERIEL, CODEBARREINVENTAIRE)  VALUES({ this.FK_IdCategorie},'{this.Nom}','{this.ReferenceConstr}','{this.CodeBarre}');";
+            accesBD.SetData(requete);
         }
     
 
@@ -76,14 +76,14 @@ namespace Maquette
         {
             ObservableCollection<Materiel> leMateriel = new ObservableCollection<Materiel>();
             DataAccess accesBD = new DataAccess();
-            String requete = $"select * from materiel where  " + criteres;
-           DataTable datas = accesBD.GetData(requete);
+            String requete = $"select * from materiel where " + criteres + " ;";
+            DataTable datas = accesBD.GetData(requete);
 
             if (datas != null)
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Materiel m = new Materiel(int.Parse(row["IDMATERIEL"].ToString()), (String)row["CODEBARREINVENTAIRE"], (String)row["NOMMATERIEL"], (String)row["REFERENCECONSTR"], int.Parse(row["IDCATEGORIE"].ToString()));
+                    Materiel m = new Materiel(int.Parse(row["IDMATERIEL"].ToString()), (String)row["CODEBARREINVENTAIRE"], (String)row["NOMMATERIEL"], (String)row["REFERENCECONSTRUCTEURMATERIEL"], int.Parse(row["IDCATEGORIE"].ToString()));
                     leMateriel.Add(m);
                 }
             }

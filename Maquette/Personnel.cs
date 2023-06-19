@@ -29,7 +29,9 @@ namespace Maquette
         public ObservableCollection<Attribution> LesAttributions { get; set; }
         public void Create()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"Insert into PERSONNEL (IDPERSONNEL, NOMPERSONNEL, PRENOMPERSONNEL, EMAILPERSONNEL)  VALUES({this.IdPersonnel}, '{this.Nom}','{this.Prenom}, '{this.AdresseMail}');";
+            accesBD.SetData(requete);
         }
 
         public void Delete()
@@ -43,13 +45,13 @@ namespace Maquette
         {
             ObservableCollection<Personnel> lesPersonnels = new ObservableCollection<Personnel>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select IDPersonnel, NOMPERSONNEL,  EMAILPERSONNEL , PRENOMPERSONNEL from Personnel ;";
+            String requete = "select IDPERSONNEL, NOMPERSONNEL, PRENOMPERSONNEL, EMAILPERSONNEL from Personnel ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Personnel e = new Personnel(int.Parse(row["IDPersonnel"].ToString()), (String)row["NOMPersonnel"], (String)row["PRENOMPERSONNEL"], (String)row["EMAILPERSONNEL"]);
+                    Personnel e = new Personnel(int.Parse(row["IDPERSONNEL"].ToString()), (String)row["NOMPERSONNEL"], (String)row["PRENOMPERSONNEL"], (String)row["EMAILPERSONNEL"]);
                     lesPersonnels.Add(e);
                 }
             }
@@ -58,7 +60,19 @@ namespace Maquette
 
         public ObservableCollection<Personnel> FindBySelection(string criteres)
         {
-            throw new NotImplementedException();
+            ObservableCollection<Personnel> lesPersonnels = new ObservableCollection<Personnel>();
+            DataAccess accesBD = new DataAccess();
+            String requete = "select IDPERSONNEL, NOMPERSONNEL, PRENOMPERSONNEL, EMAILPERSONNEL from Personnel where " + criteres + " ;";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                foreach (DataRow row in datas.Rows)
+                {
+                    Personnel e = new Personnel(int.Parse(row["IDPERSONNEL"].ToString()), (String)row["NOMPERSONNEL"], (String)row["PRENOMPERSONNEL"], (String)row["EMAILPERSONNEL"]);
+                    lesPersonnels.Add(e);
+                }
+            }
+            return lesPersonnels;
         }
 
         public void Read()
@@ -69,7 +83,7 @@ namespace Maquette
         public void Update()
         {
             DataAccess accesBD = new DataAccess();
-            String requete = $"update  PERSONNEL  SET  NOMPERSONNEL  = '{this.Nom}' , SET EMAILPERSONNEL = {this.AdresseMail}, SET PRENOMPERSONNEL = '{this.Prenom}'  where IDPersonnel = {this.IdPersonnel};";
+            String requete = $"UPDATE  PERSONNEL  SET  NOMPERSONNEL  = '{this.Nom}' , SET PRENOMPERSONNEL = '{this.Prenom}', SET EMAILPERSONNEL = {this.AdresseMail} where IDPersonnel = {this.IdPersonnel};";
             accesBD.SetData(requete);
         }
     }

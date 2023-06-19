@@ -65,6 +65,20 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                       />
+                    <Button x:Name="buttonSupMat"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,10,10"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Content="Supprimer" />
+                    <Button x:Name="buttonModifMat"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Content="Modifier" />
                 </Grid>
             </TabItem>
             <TabItem Header="Catégorie">
@@ -80,6 +94,20 @@
                         Margin="80,120,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top" />
+                    <Button x:Name="buttonSupCat"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,10,10"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Content="Supprimer" />
+                    <Button x:Name="buttonModifCat"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Content="Modifier" />
                 </Grid>
             </TabItem>
             <TabItem Margin="0,0,0,0" Header="Attribution">
@@ -129,6 +157,20 @@
                         Margin="80,225,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top" />
+                    <Button x:Name="buttonSupAtt"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,10,10"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Content="Supprimer" />
+                    <Button x:Name="buttonModifAtt"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Content="Modifier" />
                 </Grid>
             </TabItem>
             <TabItem Header="Personnel">
@@ -138,7 +180,7 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Nom" />
-                    <TextBox
+                    <TextBox x:Name="tb_NomPers"
                         Width="200"
                         Height="20"
                         Margin="80,90,0,0"
@@ -151,7 +193,7 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Prenom" />
-                    <TextBox
+                    <TextBox x:Name="tb_PrenomPers"
                         Width="200"
                         Height="20"
                         Margin="80,150,0,0"
@@ -164,7 +206,7 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Adresse Email" />
-                    <TextBox
+                    <TextBox x:Name="tb_MailPers"
                         Width="200"
                         Height="20"
                         Margin="80,210,0,0"
@@ -172,16 +214,21 @@
                         VerticalAlignment="Top"
                         DataContext="{Binding SelectedItem, ElementName=cb_personnel}"
                         Text="{Binding Prenom}" />
-                    <ComboBox
-                        x:Name="cb_personnel"
-                        Width="200"
-                        Height="30"
-                        Margin="0,20,20,0"
-                        Padding="10,5,0,0"
+                    
+                    <Button x:Name="buttonSupPer"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,10,10"
                         HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        DisplayMemberPath="Nom"
-                        ItemsSource="{Binding LesPersonnels}" />
+                        VerticalAlignment="Bottom"
+                        Content="Supprimer" />
+                    <Button x:Name="buttonModifPer"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Content="Modifier" />
                 </Grid>
             </TabItem>
         </TabControl>
@@ -193,12 +240,5 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Content="Annuler" />
-        <Button
-            Width="70"
-            Height="20"
-            Margin="0,0,10,10"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            Content="Supprimer" />
     </Grid>
 </Window>

@@ -25,12 +25,22 @@
 
         <Label Grid.Column="1" Margin="0,40,0,0" Content="Attributions" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center"/>
         <Label Grid.Column="2" Margin="0,40,0,0" Content="Matériel" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center"/>
-        <ListView x:Name="AttributionAff" ItemsSource="{Binding LesAttributions}" Grid.Row="1" Grid.Column="1" MouseDoubleClick="ModifierAttribution">
+        <ListView x:Name="AttributionAff" ItemsSource="{Binding LesAttributions}" Grid.Row="1" Grid.Column="1" Margin="0,0,0,150" MouseDoubleClick="ModifierAttribution">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Materiel" Width="100"  DisplayMemberBinding="{Binding MaterielAttribution.Nom}"/>
                     <GridViewColumn Header="Personnel" Width="100" DisplayMemberBinding="{Binding PersonnelAttribution.Nom}"/>
                     <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding DateAttribution, StringFormat=d}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Grid.Column="1" Margin="0,270,0,100" Content="Membre Personnel" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" Grid.Row="1"/>
+        <ListView x:Name="ListPers"  ItemsSource="{Binding LesPersonnels }" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Height="110" MouseDoubleClick="ModifPersonnel">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="75" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Prenom" Width="75" DisplayMemberBinding="{Binding Prenom}"/>
+                    <GridViewColumn Header="Mail" Width="125" DisplayMemberBinding="{Binding AdresseMail}"/>
                 </GridView>
             </ListView.View>
         </ListView>
