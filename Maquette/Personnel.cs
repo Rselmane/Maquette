@@ -22,6 +22,8 @@ namespace Maquette
             this.AdresseMail = adresseMail;
         }
 
+        public Personnel(string nom, string prenom, string adresseMail, ObservableCollection<Attribution> lesAttributions) : this (0, nom, prenom, adresseMail) { }
+
         public int IdPersonnel { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
