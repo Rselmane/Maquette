@@ -11,7 +11,7 @@
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <!-- <Window.DataContext>
+    <!--<Window.DataContext>
         <local:ApplicationData x:Name="ApplicationData" />
     </Window.DataContext>-->
     <Grid>
@@ -31,8 +31,9 @@
                         Padding="10,5,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                       SelectedItem="{Binding CategorieMat}"
-                        ItemsSource="{Binding NomCategorie  }"/>
+                        DataContext="ApplicationData"
+                        ItemsSource="{Binding LesCategories}"
+                        SelectedIndex="-1" />
                     <Label
                         Margin="75,90,0,0"
                         HorizontalAlignment="Left"
@@ -45,7 +46,7 @@
                         Margin="80,120,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Text="{Binding CodeBarre}" Grid.ColumnSpan="2"/>
+                        Text="{Binding CodeBarre}" />
                     <Label
                         Margin="75,145,0,0"
                         HorizontalAlignment="Left"
@@ -58,7 +59,7 @@
                         Margin="80,170,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Text="{Binding Nom}" Grid.ColumnSpan="2"/>
+                        Text="{Binding Nom}" />
                     <Label
                         Margin="75,200,0,0"
                         HorizontalAlignment="Left"
@@ -70,8 +71,8 @@
                         Height="20"
                         Margin="80,225,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top" 
-                        Text="{Binding ReferenceConstr}" Grid.ColumnSpan="2"/>
+                        VerticalAlignment="Top"
+                        Text="{Binding ReferenceConstr}" />
                     <Button
                         x:Name="buttonSupMat"
                         Width="70"
@@ -130,10 +131,13 @@
             <TabItem Margin="0,0,0,0" Header="Attribution">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="99*"/>
-                        <ColumnDefinition Width="295*"/>
+                        <ColumnDefinition Width="99*" />
+                        <ColumnDefinition Width="295*" />
                     </Grid.ColumnDefinitions>
-                    <Label Margin="5,0,0,0" Content="Personne" Grid.ColumnSpan="2" />
+                    <Label
+                        Grid.ColumnSpan="2"
+                        Margin="5,0,0,0"
+                        Content="Personne" />
                     <Label
                         x:Name="ContenuEnseignant"
                         Margin="13,24,0,0"
@@ -154,42 +158,48 @@
                         Background="#FFF7FF00"
                         Content="{Binding MaterielAttribution.Nom}" />
                     <Label
+                        Grid.ColumnSpan="2"
                         Margin="75,140,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Content="Commentaire" Grid.ColumnSpan="2" />
+                        Content="Commentaire" />
                     <TextBox
                         x:Name="tb_commentaire"
+                        Grid.ColumnSpan="2"
                         Width="200"
                         Height="20"
                         Margin="80,170,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top" Grid.ColumnSpan="2"
-                        Text="{Binding Commentaire}"/>
+                        VerticalAlignment="Top"
+                        Text="{Binding Commentaire}" />
                     <Label
+                        Grid.ColumnSpan="2"
                         Margin="75,200,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Content="Date Attribution" Grid.ColumnSpan="2" />
+                        Content="Date Attribution" />
                     <DatePicker
                         x:Name="dt_atribution"
+                        Grid.ColumnSpan="2"
                         Width="150"
                         Height="25"
                         Margin="80,225,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top" Grid.ColumnSpan="2"
+                        VerticalAlignment="Top"
                          Text="{Binding DateAttribution,StringFormat='dd/MM/yyyy'}"/>
                     <Button
                         x:Name="buttonSupAtt"
+                        Grid.Column="1"
                         Width="70"
                         Height="20"
                         Margin="0,0,10,10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         Click="buttonSupAtt_Click"
-                        Content="Supprimer" Grid.Column="1" />
+                        Content="Supprimer" />
                     <Button
                         x:Name="buttonModifAtt"
+                        Grid.Column="1"
                         Width="70"
                         Height="20"
                         Margin="63,0,0,10"
@@ -224,7 +234,7 @@
                         Height="20"
                         Margin="80,150,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top"                       
+                        VerticalAlignment="Top"
                         Text="{Binding Prenom}" />
                     <Label
                         Margin="75,180,0,0"
@@ -238,7 +248,6 @@
                         Margin="80,210,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                       
                         Text="{Binding AdresseMail}" />
 
                     <Button

@@ -83,5 +83,10 @@ namespace Maquette
             String requete = $"update CATEGORIE_MATERIEL SET NOMCATEGORIE = '{this.NomCategorie}' where IDCATEGORIE = {this.IdCategorie};";
             accesBD.SetData(requete);
         }
+
+        public override string ToString()
+        {
+            return this.NomCategorie;
+        }
     }
 }
