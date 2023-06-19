@@ -19,8 +19,10 @@ namespace Maquette
     /// </summary>
     public partial class WindowModifier : Window
     {
-        public WindowModifier()
+
+        public WindowModifier(Object p)
         {
+            this.DataContext = p;
             InitializeComponent();
         }
 
@@ -33,13 +35,13 @@ namespace Maquette
         {
 
 
-            Materiel m = new Materiel(tb_codebarre.Text,tb_nom.Text,tb_refConst.Text,cb_cate.SelectedIndex);
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous supprimer " + m.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+          
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous supprimer " + ((Materiel)this.DataContext).Nom  + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (delete == MessageBoxResult.Yes)
             {
                 MessageBox.Show("Matériel supprimé avec succès !", "Materiel", MessageBoxButton.OK,MessageBoxImage.Information) ;
-                m.Delete();
+                ((Materiel)this.DataContext).Delete();
 
 
             }
@@ -48,14 +50,16 @@ namespace Maquette
 
         private void buttonModifMat_Click(object sender, RoutedEventArgs e)
         {
+          
 
-            Materiel m = new Materiel(tb_codebarre.Text, tb_nom.Text, tb_refConst.Text, cb_cate.SelectedIndex);
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous modifier  " + m.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous modifier  " + ((Materiel)this.DataContext).Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (delete == MessageBoxResult.Yes)
             {
+                ((Materiel)this.DataContext).Update();
                 MessageBox.Show("Matériel modfié  avec succès !", "Materiel", MessageBoxButton.OK, MessageBoxImage.Information);
-                m.Update();
+                
 
 
             }
@@ -64,14 +68,14 @@ namespace Maquette
 
         private void buttonSupCat_Click(object sender, RoutedEventArgs e)
         {
-             Categorie c = new Categorie(tbCateModif.Text);
+             
 
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous Surppimer   " + c.NomCategorie + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+              MessageBoxResult delete = MessageBox.Show("Voulez-vous Surppimer   " + ((Categorie)this.DataContext).NomCategorie + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (delete == MessageBoxResult.Yes)
             {
                 MessageBox.Show(" Catégorie  Supprimé  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
-                c.Delete();
+                ((Categorie)this.DataContext).Delete();
 
 
             }
@@ -80,14 +84,13 @@ namespace Maquette
 
         private void buttonModifCat_Click(object sender, RoutedEventArgs e)
         {
-            Categorie c = new Categorie(tbCateModif.Text);
 
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + c.NomCategorie + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Attribution)this.DataContext).MaterielAttribution.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (delete == MessageBoxResult.Yes)
             {
                 MessageBox.Show(" Catégorie  modifié  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
-                c.Delete();
+                ((Categorie)this.DataContext).Delete();
 
 
             }
@@ -96,7 +99,34 @@ namespace Maquette
 
         private void buttonSupAtt_Click(object sender, RoutedEventArgs e)
         {
+
            
+                MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Attribution)this.DataContext).MaterielAttribution.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (delete == MessageBoxResult.Yes)
+            {
+                MessageBox.Show(" Catégorie  modifié  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
+                ((Categorie)this.DataContext).Delete();
+
+
+            }
+        }
+
+
+        private void buttonModifPer_Click(object sender, RoutedEventArgs e)
+        {
+   
+
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Personnel)this.DataContext).Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (delete == MessageBoxResult.Yes)
+            {
+                MessageBox.Show(" personnel  modifié  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
+                ((Categorie)this.DataContext).Update();
+
+
+            }
+
         }
     }
 

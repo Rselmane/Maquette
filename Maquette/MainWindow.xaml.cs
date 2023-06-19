@@ -50,15 +50,17 @@ namespace Maquette
             if (a != null)
 
             {
-              WindowModifier modifAtt = new WindowModifier();
+              WindowModifier modifAtt = new WindowModifier(a);
                 int valeurvalid = 2;
+                int idAttP = a.IdPersonnel;
+                DateTime idAttD = a.DateAttribution;
+                int idAttM = a.IdMateriel;
                 modifAtt.TabModif.SelectedIndex = valeurvalid;
                 modifAtt.Owner = this;
                 modifAtt.ContenuEnseignant.Content = a.PersonnelAttribution.Nom + " " + a.PersonnelAttribution.Prenom;
                 modifAtt.ContenuMateriel.Content = a.MaterielAttribution.Nom;
                 modifAtt.tb_commentaire.Text = a.Commentaire;
                 modifAtt.dt_atribution.Text = ((DateTime)a.DateAttribution).ToString();
-
                 bool[] tabIndex = new bool[4];
                 tabIndex[valeurvalid] = true;
 
@@ -76,7 +78,7 @@ namespace Maquette
             Materiel m = (Materiel)(MaterielList.SelectedItem);
             if (m != null)
             {
-                WindowModifier modifMat = new WindowModifier();
+                WindowModifier modifMat = new WindowModifier(m);
                 int valeurvalid = 0;
                 modifMat.TabModif.SelectedIndex = valeurvalid;
                 modifMat.cb_cate.SelectedIndex = m.CategorieMat.IdCategorie - 1;
@@ -102,7 +104,7 @@ namespace Maquette
             Categorie a = (Categorie)(CateMateriel.SelectedItem);
             if (a != null)
             {
-                WindowModifier modifCat = new WindowModifier();
+                WindowModifier modifCat = new WindowModifier(a);
                 int valeurvalid = 1;
                 modifCat.TabModif.SelectedIndex = valeurvalid;
                 modifCat.Owner = this;
@@ -115,6 +117,7 @@ namespace Maquette
                     TabItem tabItem = modifCat.TabModif.Items[i] as TabItem;
                     tabItem.IsEnabled = tabIndex[i];
                 }
+               
 
                 modifCat.ShowDialog();
             }
@@ -129,11 +132,6 @@ namespace Maquette
                 WindowModifier modifPers = new WindowModifier();
                 int valeurvalid = 3;
                 modifPers.TabModif.SelectedIndex = valeurvalid;
-
-                modifPers.Owner = this;
-                modifPers.tb_NomPers.Text = p.Nom;
-                modifPers.tb_PrenomPers.Text = p.Prenom;
-                modifPers.tb_MailPers.Text = p.AdresseMail;
                 bool[] tabIndex = new bool[4];
                 tabIndex[valeurvalid] = true;
 
@@ -142,7 +140,7 @@ namespace Maquette
                     TabItem tabItem = modifPers.TabModif.Items[i] as TabItem;
                     tabItem.IsEnabled = tabIndex[i];
                 }
-
+           
                 modifPers.ShowDialog();
             }
         }

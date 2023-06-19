@@ -11,9 +11,9 @@
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Window.DataContext>
+   <!-- <Window.DataContext>
         <local:ApplicationData x:Name="ApplicationData" />
-    </Window.DataContext>
+    </Window.DataContext>-->
     <Grid>
         <TabControl x:Name="TabModif">
             <TabItem Header="Matériel">
@@ -34,51 +34,55 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Code Barre" />
-                    <TextBox x:Name="tb_codebarre"
+                    <TextBox
+                        x:Name="tb_codebarre"
                         Width="200"
                         Height="20"
                         Margin="80,120,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                    />
+                        VerticalAlignment="Top" />
                     <Label
                         Margin="75,145,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Nom" />
-                    <TextBox x:Name="tb_nom"
+                    <TextBox
+                        x:Name="tb_nom"
                         Width="200"
                         Height="20"
                         Margin="80,170,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                      />
+                        VerticalAlignment="Top" />
                     <Label
                         Margin="75,200,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Reference Constructeur" />
-                    <TextBox x:Name="tb_refConst"
+                    <TextBox
+                        x:Name="tb_refConst"
                         Width="200"
                         Height="20"
                         Margin="80,225,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                      />
-                    <Button x:Name="buttonSupMat"
+                        VerticalAlignment="Top" />
+                    <Button
+                        x:Name="buttonSupMat"
                         Width="70"
                         Height="20"
                         Margin="0,0,10,10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Content="Supprimer" Click="buttonSupMat_Click" />
-                    <Button x:Name="buttonModifMat"
+                        Click="buttonSupMat_Click"
+                        Content="Supprimer" />
+                    <Button
+                        x:Name="buttonModifMat"
                         Width="70"
                         Height="20"
                         Margin="0,0,0,10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
-                        Content="Modifier" Click="buttonModifMat_Click" />
+                        Click="buttonModifMat_Click"
+                        Content="Modifier" />
                 </Grid>
             </TabItem>
             <TabItem Header="Catégorie">
@@ -88,26 +92,31 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Nom Categorie" />
-                    <TextBox x:Name="tbCateModif"
+                    <TextBox
+                        x:Name="tbCateModif"
                         Width="200"
                         Height="20"
                         Margin="80,120,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top" />
-                    <Button x:Name="buttonSupCat"
+                    <Button
+                        x:Name="buttonSupCat"
                         Width="70"
                         Height="20"
                         Margin="0,0,10,10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Content="Supprimer" Click="buttonSupCat_Click" />
-                    <Button x:Name="buttonModifCat"
+                        Click="buttonSupCat_Click"
+                        Content="Supprimer" />
+                    <Button
+                        x:Name="buttonModifCat"
                         Width="70"
                         Height="20"
                         Margin="0,0,0,10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
-                        Content="Modifier" Click="buttonModifCat_Click" />
+                        Click="buttonModifCat_Click"
+                        Content="Modifier" />
                 </Grid>
             </TabItem>
             <TabItem Margin="0,0,0,0" Header="Attribution">
@@ -157,14 +166,17 @@
                         Margin="80,225,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top" />
-                    <Button x:Name="buttonSupAtt"
+                    <Button
+                        x:Name="buttonSupAtt"
                         Width="70"
                         Height="20"
                         Margin="0,0,10,10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Content="Supprimer" Click="buttonSupAtt_Click" />
-                    <Button x:Name="buttonModifAtt"
+                        Click="buttonSupAtt_Click"
+                        Content="Supprimer" />
+                    <Button
+                        x:Name="buttonModifAtt"
                         Width="70"
                         Height="20"
                         Margin="0,0,0,10"
@@ -180,54 +192,58 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Nom" />
-                    <TextBox x:Name="tb_NomPers"
+                    <TextBox
+                        x:Name="tb_NomPers"
                         Width="200"
                         Height="20"
                         Margin="80,90,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        DataContext="{Binding SelectedItem, ElementName=cb_personnel}"
                         Text="{Binding Nom}" />
                     <Label
                         Margin="75,120,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Prenom" />
-                    <TextBox x:Name="tb_PrenomPers"
+                    <TextBox
+                        x:Name="tb_PrenomPers"
                         Width="200"
                         Height="20"
                         Margin="80,150,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        DataContext="{Binding SelectedItem, ElementName=cb_personnel}"
-                        Text="{Binding AdresseMail}" />
+                        VerticalAlignment="Top"                       
+                        Text="{Binding Prenom}" />
                     <Label
                         Margin="75,180,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Adresse Email" />
-                    <TextBox x:Name="tb_MailPers"
+                    <TextBox
+                        x:Name="tb_MailPers"
                         Width="200"
                         Height="20"
                         Margin="80,210,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        DataContext="{Binding SelectedItem, ElementName=cb_personnel}"
-                        Text="{Binding Prenom}" />
-                    
-                    <Button x:Name="buttonSupPer"
+                       
+                        Text="{Binding AdresseMail}" />
+
+                    <Button
+                        x:Name="buttonSupPer"
                         Width="70"
                         Height="20"
                         Margin="0,0,10,10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         Content="Supprimer" />
-                    <Button x:Name="buttonModifPer"
+                    <Button
+                        x:Name="buttonModifPer"
                         Width="70"
                         Height="20"
                         Margin="0,0,0,10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
+                        Click="buttonModifPer_Click"
                         Content="Modifier" />
                 </Grid>
             </TabItem>
@@ -239,6 +255,7 @@
             Margin="10,0,0,10"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
-            Content="Annuler" Click="AnnulerModification" />
+            Click="AnnulerModification"
+            Content="Annuler" />
     </Grid>
 </Window>
