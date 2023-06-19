@@ -33,13 +33,11 @@ namespace Maquette
         public MainWindow()
         {
             InitializeComponent();
-
-
-    }
+        }
 
         private void ClickAjouter(object sender, RoutedEventArgs e)
         {
-            WindowCréer creation = new WindowCréer();
+            WindowCréer creation = new WindowCréer(this);
             creation.ShowDialog();
         }
 
@@ -63,13 +61,6 @@ namespace Maquette
                 }
                 modifAtt.ShowDialog();
             }
-
-            
-
-
-
-
-            
         }
 
         private void ModifierMateriel(object sender, MouseButtonEventArgs e)
@@ -135,6 +126,10 @@ namespace Maquette
            
                 modifPers.ShowDialog();
             }
+        }
+        private void Refresh()
+        {
+
         }
     }
 }
