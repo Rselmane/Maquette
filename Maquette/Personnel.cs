@@ -143,6 +143,11 @@ namespace Maquette
             accesBD.SetData(requete);
         }
 
+        /// <summary>
+        /// recupère la liste complète des personnels  de la base de donnés
+        /// </summary>
+        /// <returns> une liste avec  les donnés des  personnels </returns>
+
         public ObservableCollection<Personnel> FindAll()
         {
             ObservableCollection<Personnel> lesPersonnels = new ObservableCollection<Personnel>();
@@ -159,6 +164,10 @@ namespace Maquette
             }
             return lesPersonnels;
         }
+        /// <summary>
+        /// recupère la liste  des personnels  de la base de donnés filté 
+        /// </summary>
+        /// <returns> une liste avec  la ou  donnés des  personnels filté </returns>
 
         public ObservableCollection<Personnel> FindBySelection(string criteres)
         {
@@ -181,7 +190,9 @@ namespace Maquette
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// met à jour le personnel dans la base de données
+        /// </summary>
         public void Update()
         {
             DataAccess accesBD = new DataAccess();

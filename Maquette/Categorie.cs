@@ -77,13 +77,18 @@ namespace Maquette
                 this.lesMateriels = value;
             }
         }
-
+        /// <summary>
+        ///créer la catégorie dans la base de données
+        /// </summary>
         public void Create()
         {
             DataAccess accesBD = new DataAccess();
             String requete = $"Insert into CATEGORIE_MATERIEL (NOMCATEGORIE) VALUES('{this.NomCategorie}');";
             accesBD.SetData(requete);
         }
+        /// <summary>
+        ///créer la catégorie dans la base de données
+        /// </summary>
 
         public void Delete()
         {
@@ -112,7 +117,10 @@ namespace Maquette
             }
             return lesCategories;
         }
-
+        /// <summary>
+        /// recupère la liste  des  categories   de la base de donnés filtrée 
+        /// </summary>
+        /// <returns> une liste avec  la ou  donnés des  personnels filtré </returns>
         public ObservableCollection<Categorie> FindBySelection(string criteres)
         {
             ObservableCollection<Categorie> lesCategories = new ObservableCollection<Categorie>();
@@ -134,7 +142,9 @@ namespace Maquette
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// recupère la liste  des categories  de la base de donnés filtré 
+        /// </summary>
         public void Update()
         {
             DataAccess accesBD = new DataAccess();

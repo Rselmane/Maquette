@@ -127,6 +127,9 @@ namespace Maquette
                 this.personnelAttribution = value;
             }
         }
+        /// <summary>
+        /// créee l'attribut et l'insère dans la base de données
+        /// </summary>
 
         public void Create()
         {
@@ -134,6 +137,9 @@ namespace Maquette
             String requete = $"Insert into EST_ATTRIBUE (IDPERSONNEL, IDMATERIEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION) VALUES({this.IdPersonnel},{this.IdMateriel},'{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}','{this.Commentaire}');";
             accesBD.SetData(requete);
         }
+        /// <summary>
+        /// supprime l'attribut de la base de données
+        /// </summary>
 
         public void Delete()
         {
@@ -141,6 +147,10 @@ namespace Maquette
             String requete = $"Delete from EST_ATTRIBUE where IDMATERIEL= {this.IdMateriel} and IDPERSONNEL= {this.IdPersonnel} and DATEATTRIBUTION='{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}';";
             accesBD.SetData(requete);
         }
+        /// <summary>
+        /// recupère la liste  des personnels  de la base de donnés filté 
+        /// </summary>
+        /// <returns> la liste complète de toutes les attributions </returns>
 
         public ObservableCollection<Attribution> FindAll()
         {
@@ -159,6 +169,10 @@ namespace Maquette
             return lesAttributs;
         }
 
+        /// <summary>
+        /// recupère la liste  des personnels  de la base de donnés filtré 
+        /// </summary>
+        /// <returns> une liste avec  la ou  données des  attributions filtré </returns>
         public ObservableCollection<Attribution> FindBySelection(string criteres)
         {
             ObservableCollection<Attribution> lesAttributs = new ObservableCollection<Attribution>();
@@ -180,7 +194,10 @@ namespace Maquette
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// met à jour l'attribution dans la base de donnéees  
+        /// /// </summary>
+        /// <returns> une liste avec  la ou  données des  attributions filtré </returns>
         public void Update()
         {
             DataAccess accesBD = new DataAccess();
