@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maquette", "Maquette\Maquette.csproj", "{0A892F51-291F-4BEA-AF77-336BFF716862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maquette", "Maquette\Maquette.csproj", "{0A892F51-291F-4BEA-AF77-336BFF716862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaquetteTests", "MaquetteTests\MaquetteTests.csproj", "{C19E51B9-7832-49ED-8ED0-E84321440494}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0A892F51-291F-4BEA-AF77-336BFF716862}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A892F51-291F-4BEA-AF77-336BFF716862}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A892F51-291F-4BEA-AF77-336BFF716862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19E51B9-7832-49ED-8ED0-E84321440494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19E51B9-7832-49ED-8ED0-E84321440494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19E51B9-7832-49ED-8ED0-E84321440494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19E51B9-7832-49ED-8ED0-E84321440494}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
