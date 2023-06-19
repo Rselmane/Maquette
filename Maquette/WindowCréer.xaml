@@ -33,7 +33,7 @@
             <TabItem Header="Catégorie">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Nom Categorie" Margin="75,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
+                    <TextBox x:Name="tb_nomcaté" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Attribution" Margin="0,0,0,0">
