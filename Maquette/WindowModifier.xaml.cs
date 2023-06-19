@@ -123,6 +123,8 @@ namespace Maquette
             {
                 MessageBox.Show(" personnel  modifié  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
                 ((Categorie)this.DataContext).Update();
+               
+
 
 
             }

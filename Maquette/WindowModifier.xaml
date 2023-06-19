@@ -11,7 +11,7 @@
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-   <!-- <Window.DataContext>
+    <!-- <Window.DataContext>
         <local:ApplicationData x:Name="ApplicationData" />
     </Window.DataContext>-->
     <Grid>
@@ -27,8 +27,8 @@
                         Padding="10,5,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        DisplayMemberPath="NomCategorie"
-                        ItemsSource="{Binding LesCategories}" />
+                       SelectedItem="{Binding CategorieMat}"
+                        ItemsSource="{Binding NomCategorie  }"/>
                     <Label
                         Margin="75,90,0,0"
                         HorizontalAlignment="Left"
@@ -40,7 +40,8 @@
                         Height="20"
                         Margin="80,120,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top" />
+                        VerticalAlignment="Top"
+                        Text="{Binding CodeBarre}"/>
                     <Label
                         Margin="75,145,0,0"
                         HorizontalAlignment="Left"
@@ -52,7 +53,8 @@
                         Height="20"
                         Margin="80,170,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top" />
+                        VerticalAlignment="Top"
+                        Text="{Binding Nom}"/>
                     <Label
                         Margin="75,200,0,0"
                         HorizontalAlignment="Left"
@@ -64,7 +66,8 @@
                         Height="20"
                         Margin="80,225,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top" />
+                        VerticalAlignment="Top" 
+                        Text="{Binding ReferenceConstr}"/>
                     <Button
                         x:Name="buttonSupMat"
                         Width="70"
@@ -121,14 +124,18 @@
             </TabItem>
             <TabItem Margin="0,0,0,0" Header="Attribution">
                 <Grid Background="#FFE5E5E5">
-                    <Label Margin="5,0,0,0" Content="Personne" />
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="99*"/>
+                        <ColumnDefinition Width="295*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Margin="5,0,0,0" Content="Personne" Grid.ColumnSpan="2" />
                     <Label
                         x:Name="ContenuEnseignant"
                         Margin="13,24,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Background="#FFF7FF00"
-                        Content="{Binding Nom}" />
+                        Content="{Binding PersonnelAttribution.Nom}" />
                     <Label
                         Margin="5,70,0,0"
                         HorizontalAlignment="Left"
@@ -140,32 +147,33 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Background="#FFF7FF00"
-                        Content="{Binding Nom}"
-                        DataContext="{Binding SelectedItem, ElementName=cb_cate}" />
+                        Content="{Binding MaterielAttribution.Nom}" />
                     <Label
                         Margin="75,140,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Content="Commentaire" />
+                        Content="Commentaire" Grid.ColumnSpan="2" />
                     <TextBox
                         x:Name="tb_commentaire"
                         Width="200"
                         Height="20"
                         Margin="80,170,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top" />
+                        VerticalAlignment="Top" Grid.ColumnSpan="2"
+                        Text="{Binding Commentaire}"/>
                     <Label
                         Margin="75,200,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Content="Date Attribution" />
+                        Content="Date Attribution" Grid.ColumnSpan="2" />
                     <DatePicker
                         x:Name="dt_atribution"
                         Width="150"
                         Height="25"
                         Margin="80,225,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top" />
+                        VerticalAlignment="Top" Grid.ColumnSpan="2"
+                         Text="{Binding DateAttribution, StringFormat=d}"/>
                     <Button
                         x:Name="buttonSupAtt"
                         Width="70"
@@ -174,15 +182,15 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         Click="buttonSupAtt_Click"
-                        Content="Supprimer" />
+                        Content="Supprimer" Grid.Column="1" />
                     <Button
                         x:Name="buttonModifAtt"
                         Width="70"
                         Height="20"
-                        Margin="0,0,0,10"
-                        HorizontalAlignment="Center"
+                        Margin="63,0,0,10"
+                        HorizontalAlignment="Left"
                         VerticalAlignment="Bottom"
-                        Content="Modifier" />
+                        Content="Modifier" Grid.Column="1" />
                 </Grid>
             </TabItem>
             <TabItem Header="Personnel">

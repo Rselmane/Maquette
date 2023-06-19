@@ -50,15 +50,7 @@ namespace Maquette
             {
               WindowModifier modifAtt = new WindowModifier(a);
                 int valeurvalid = 2;
-                int idAttP = a.IdPersonnel;
-                DateTime idAttD = a.DateAttribution;
-                int idAttM = a.IdMateriel;
                 modifAtt.TabModif.SelectedIndex = valeurvalid;
-                modifAtt.Owner = this;
-                modifAtt.ContenuEnseignant.Content = a.PersonnelAttribution.Nom + " " + a.PersonnelAttribution.Prenom;
-                modifAtt.ContenuMateriel.Content = a.MaterielAttribution.Nom;
-                modifAtt.tb_commentaire.Text = a.Commentaire;
-                modifAtt.dt_atribution.Text = ((DateTime)a.DateAttribution).ToString();
                 bool[] tabIndex = new bool[4];
                 tabIndex[valeurvalid] = true;
 
@@ -78,13 +70,7 @@ namespace Maquette
             {
                 WindowModifier modifMat = new WindowModifier(m);
                 int valeurvalid = 0;
-                modifMat.TabModif.SelectedIndex = valeurvalid;
-                modifMat.cb_cate.SelectedIndex = m.CategorieMat.IdCategorie - 1;
-                modifMat.tb_codebarre.Text = m.CodeBarre;
-                modifMat.tb_refConst.Text = m.ReferenceConstr;
-                modifMat.tb_nom.Text = m.Nom;
                 modifMat.Owner = this;
-
                 bool[] tabIndex = new bool[4];
                 tabIndex[valeurvalid] = true;
 
