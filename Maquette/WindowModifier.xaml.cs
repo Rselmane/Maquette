@@ -59,7 +59,7 @@ namespace Maquette
                 MessageBox.Show("Merci de renseigner tous les champs  obligatoires ! ", "Matériel", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
-            else if( cb_cate.SelectedItem == null)
+            if( cb_cate.SelectedItem == null)
             {
                 MessageBox.Show("Merci de selectionner une catégorie ! ", "Matériel", MessageBoxButton.OK, MessageBoxImage.Error);
             }
