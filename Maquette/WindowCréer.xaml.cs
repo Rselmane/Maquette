@@ -37,6 +37,7 @@ namespace Maquette
             Materiel m = new Materiel(tb_CodeBarreCreer.Text, tb_NomCreer.Text, tb_RefConstructeurCreer.Text, ((Categorie)CategorieMat.SelectedItem).IdCategorie);
             m.Create();
             Close();
+
         }
 
         private void CreerCat(object sender, RoutedEventArgs e)
