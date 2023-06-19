@@ -79,9 +79,7 @@ namespace Maquette
             {
                 WindowModifier modifMat = new WindowModifier(m);
                 int valeurvalid = 0;
-
                 modifMat.Owner = this;
-
                 bool[] tabIndex = new bool[4];
                 tabIndex[valeurvalid] = true;
 
@@ -123,8 +121,6 @@ namespace Maquette
             Personnel p = (Personnel)(ListPers.SelectedItem);
             if (p != null)
             {
-
-
                 WindowModifier modifPers = new WindowModifier(p);
                 int valeurvalid = 3;
                 modifPers.TabModif.SelectedIndex = valeurvalid;
