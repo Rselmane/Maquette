@@ -105,7 +105,7 @@ namespace Maquette
                 WindowModifier modifCat = new WindowModifier(a);
                 int valeurvalid = 1;
                 modifCat.TabModif.SelectedIndex = valeurvalid;
-                modifCat.Owner = this
+                modifCat.Owner = this;
                 bool[] tabIndex = new bool[4];
                 tabIndex[valeurvalid] = true;
 
