@@ -32,11 +32,77 @@ namespace Maquette
         //Constructeur sans ID
         public Personnel(string nom, string prenom, string adresseMail) : this (0, nom, prenom, adresseMail) { }
 
-        public int IdPersonnel { get; set; }
-        public string Nom { get; set; }
-        public string Prenom { get; set; }
-        public string AdresseMail { get; set; }
-        public ObservableCollection<Attribution> LesAttributions { get; set; }
+
+        private int idPersonnel;
+         private string nom;
+        private string prenom;
+        private string adresseMail;
+        private ObservableCollection<Attribution> lesAttributions;
+
+        public int IdPersonnel
+        {
+            get
+            {
+                return this.idPersonnel;
+            }
+
+            set
+            {
+                this.idPersonnel = value;
+            }
+        }
+
+        public string Nom
+        {
+            get
+            {
+                return this.nom;
+            }
+
+            set
+            {
+                this.nom = value;
+            }
+        }
+
+        public string Prenom
+        {
+            get
+            {
+                return this.prenom;
+            }
+
+            set
+            {
+                this.prenom = value;
+            }
+        }
+
+        public string AdresseMail
+        {
+            get
+            {
+                return this.adresseMail;
+            }
+
+            set
+            {
+                this.adresseMail = value;
+            }
+        }
+
+        public ObservableCollection<Attribution> LesAttributions
+        {
+            get
+            {
+                return this.lesAttributions;
+            }
+
+            set
+            {
+                this.lesAttributions = value;
+            }
+        }
 
         public void Create()
         {

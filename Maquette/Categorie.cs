@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,11 @@ namespace Maquette
         public Categorie()
         {
         }
-
+        /// <summary>
+        /// Stocke 2 infomations :
+        /// 1 entier : ID de la  Categorie 
+        /// 1 string : nom de la categorie
+        /// </summary>
         public Categorie(int idCategorie, string nomCategorie)
         {
             this.NomCategorie = nomCategorie;
@@ -21,9 +26,50 @@ namespace Maquette
         }
         public Categorie(string nomCategorie) : this(0, nomCategorie) { }
 
-        public string NomCategorie { get; set; }
-        public int IdCategorie { get; set; }
-        public ObservableCollection<Materiel> LesMateriels { get; set; }
+      
+        private string nomCategorie;
+        private int  idCategorie;
+        private ObservableCollection<Materiel> lesMateriels;
+
+        public string NomCategorie
+        {
+            get
+            {
+                return this.nomCategorie;
+            }
+
+            set
+            {
+                this.nomCategorie = value;
+            }
+        }
+
+        public int IdCategorie
+        {
+            get
+            {
+                return this.idCategorie;
+            }
+
+            set
+            {
+                this.idCategorie = value;
+            }
+        }
+
+        public ObservableCollection<Materiel> LesMateriels
+        {
+            get
+            {
+                return this.lesMateriels;
+            }
+
+            set
+            {
+                this.lesMateriels = value;
+            }
+        }
+
         public void Create()
         {
             DataAccess accesBD = new DataAccess();

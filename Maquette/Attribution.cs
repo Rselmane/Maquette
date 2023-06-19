@@ -14,6 +14,12 @@ namespace Maquette
         {
         }
 
+        /// <summary>
+        /// Stocke 4 infomations :
+        /// 2 entier : ID du personnel , Id du materiel
+        /// 1 string : Commentaire
+        /// 1 dateTime : La Date de l'attribtion
+        /// </summary>
         public Attribution(int idPersonnel, int idMateriel, DateTime dateAttribution, string commentaire)
         {
             DateAttribution = dateAttribution;
@@ -22,12 +28,90 @@ namespace Maquette
             IdPersonnel = idPersonnel;
         }
 
-        public DateTime DateAttribution { get; set; }
-        public string Commentaire { get; set; }
-        public int IdMateriel { get; set; }
-        public Materiel MaterielAttribution { get; set; }
-        public int IdPersonnel { get; set; }
-        public Personnel PersonnelAttribution { get; set; }
+        private DateTime dateAttribution;
+        private string commentaire;
+        private int idMateriel;
+        private Materiel materielAttribution;
+        private int idPersonnel;
+        private Personnel personnelAttribution;
+
+        public DateTime DateAttribution
+        {
+            get
+            {
+                return this.dateAttribution;
+            }
+
+            set
+            {
+                this.dateAttribution = value;
+            }
+        }
+
+        public string Commentaire
+        {
+            get
+            {
+                return this.commentaire;
+            }
+
+            set
+            {
+                this.commentaire = value;
+            }
+        }
+
+        public int IdMateriel
+        {
+            get
+            {
+                return this.idMateriel;
+            }
+
+            set
+            {
+                this.idMateriel = value;
+            }
+        }
+
+        public Materiel MaterielAttribution
+        {
+            get
+            {
+                return this.materielAttribution;
+            }
+
+            set
+            {
+                this.materielAttribution = value;
+            }
+        }
+
+        public int IdPersonnel
+        {
+            get
+            {
+                return this.idPersonnel;
+            }
+
+            set
+            {
+                this.idPersonnel = value;
+            }
+        }
+
+        public Personnel PersonnelAttribution
+        {
+            get
+            {
+                return this.personnelAttribution;
+            }
+
+            set
+            {
+                this.personnelAttribution = value;
+            }
+        }
 
         public void Create()
         {

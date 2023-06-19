@@ -14,7 +14,11 @@ namespace Maquette
         public Materiel()
         {
         }
-
+        /// <summary>
+        /// Stocke 5 infomations :
+        /// 2 entier : ID du personnel , Id de la Categorie
+        /// 3 string : Nom, Reference Constructeur et le code barre
+        /// </summary>
         public Materiel(int idMateriel, string codeBarre, string nom, string referenceConstr, int fK_IdCategorie)
         {
             IdMateriel = idMateriel;
@@ -26,13 +30,104 @@ namespace Maquette
 
         public Materiel(string codeBarre, string nom, string referenceConstr, int fK_IdCategorie) : this(0, codeBarre, nom, referenceConstr, fK_IdCategorie) {  }
 
-        public int IdMateriel { get; set; }
-        public string CodeBarre { get; set; }
-        public string Nom { get; set; }
-        public string ReferenceConstr { get; set; }
-        public int FK_IdCategorie { get; set; }
-        public ObservableCollection<Attribution> LesAttributions { get; set; }
-        public Categorie CategorieMat { get; set; }
+        private int idMateriel;
+        private string codeBarre;
+        private string nom;
+        private string referenceConstr;
+        private int fK_IdCategorie;
+        private ObservableCollection<Attribution> lesAttributions;
+        private Categorie categorieMat;
+
+        public int IdMateriel
+        {
+            get
+            {
+                return this.idMateriel;
+            }
+
+            set
+            {
+                this.idMateriel = value;
+            }
+        }
+
+        public string CodeBarre
+        {
+            get
+            {
+                return this.codeBarre;
+            }
+
+            set
+            {
+                this.codeBarre = value;
+            }
+        }
+
+        public string Nom
+        {
+            get
+            {
+                return this.nom;
+            }
+
+            set
+            {
+                this.nom = value;
+            }
+        }
+
+        public string ReferenceConstr
+        {
+            get
+            {
+                return this.referenceConstr;
+            }
+
+            set
+            {
+                this.referenceConstr = value;
+            }
+        }
+
+        public int FK_IdCategorie
+        {
+            get
+            {
+                return this.fK_IdCategorie;
+            }
+
+            set
+            {
+                this.fK_IdCategorie = value;
+            }
+        }
+
+        public ObservableCollection<Attribution> LesAttributions
+        {
+            get
+            {
+                return this.lesAttributions;
+            }
+
+            set
+            {
+                this.lesAttributions = value;
+            }
+        }
+
+        public Categorie CategorieMat
+        {
+            get
+            {
+                return this.categorieMat;
+            }
+
+            set
+            {
+                this.categorieMat = value;
+            }
+        }
 
         public void Create()
         {
