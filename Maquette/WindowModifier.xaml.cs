@@ -35,64 +35,87 @@ namespace Maquette
         {
 
 
-          
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous supprimer " + ((Materiel)this.DataContext).Nom  + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-            if (delete == MessageBoxResult.Yes)
-            {
-                MessageBox.Show("Matériel supprimé avec succès !", "Materiel", MessageBoxButton.OK,MessageBoxImage.Information) ;
-                ((Materiel)this.DataContext).Delete();
+           
+            
+                MessageBoxResult delete = MessageBox.Show("Voulez-vous supprimer " + ((Materiel)this.DataContext).Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if (delete == MessageBoxResult.Yes)
+                {
+                    MessageBox.Show("Matériel supprimé avec succès !", "Materiel", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ((Materiel)this.DataContext).Delete();
 
 
-            }
+                }
+            
 
         }
 
         private void buttonModifMat_Click(object sender, RoutedEventArgs e)
         {
-          
 
+            if (String.IsNullOrEmpty(tb_codebarre.Text) || String.IsNullOrEmpty(tb_nom.Text) || String.IsNullOrEmpty(tb_refConst.Text))
+            {
+                MessageBox.Show("Merci de renseigner tous les champs  obligatoires ! ", "Matériel", MessageBoxButton.OK, MessageBoxImage.Error);
 
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous modifier  " + ((Materiel)this.DataContext).Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            }
+            else if( cb_cate.SelectedItem == null)
+            {
+                MessageBox.Show("Merci de selectionner une catégorie ! ", "Matériel", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            { 
+                MessageBoxResult delete = MessageBox.Show("Voulez-vous modifier  " + ((Materiel)this.DataContext).Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (delete == MessageBoxResult.Yes)
             {
                 ((Materiel)this.DataContext).Update();
                 MessageBox.Show("Matériel modfié  avec succès !", "Materiel", MessageBoxButton.OK, MessageBoxImage.Information);
-                
+
 
 
             }
+        }
 
         }
 
         private void buttonSupCat_Click(object sender, RoutedEventArgs e)
         {
-             
+          
+            
 
-              MessageBoxResult delete = MessageBox.Show("Voulez-vous Surppimer   " + ((Categorie)this.DataContext).NomCategorie + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult delete = MessageBox.Show("Voulez-vous Surppimer   " + ((Categorie)this.DataContext).NomCategorie + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-            if (delete == MessageBoxResult.Yes)
-            {
-                MessageBox.Show(" Catégorie  Supprimé  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
-                ((Categorie)this.DataContext).Delete();
+                if (delete == MessageBoxResult.Yes)
+                {
+                    MessageBox.Show(" Catégorie  Supprimé  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ((Categorie)this.DataContext).Delete();
 
 
-            }
+                }
+            
+
 
         }
 
         private void buttonModifCat_Click(object sender, RoutedEventArgs e)
         {
-
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Attribution)this.DataContext).MaterielAttribution.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-            if (delete == MessageBoxResult.Yes)
+            if (String.IsNullOrEmpty(tbCateModif.Text))
             {
-                MessageBox.Show(" Catégorie  modifié  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
-                ((Categorie)this.DataContext).Delete();
+                MessageBox.Show("Merci de renseigner  de renseigner  le champ ! ", "Matériel", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            else
+            {
+                MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Attribution)this.DataContext).MaterielAttribution.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if (delete == MessageBoxResult.Yes)
+                {
+                    MessageBox.Show(" Catégorie  modifié  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ((Categorie)this.DataContext).Delete();
 
 
+                }
             }
 
         }
@@ -101,11 +124,11 @@ namespace Maquette
         {
 
            
-                MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Attribution)this.DataContext).MaterielAttribution.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult delete = MessageBox.Show("Voulez-vous  Supprimer   " + ((Attribution)this.DataContext).MaterielAttribution.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (delete == MessageBoxResult.Yes)
             {
-                MessageBox.Show(" Catégorie  modifié  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(" Attribution  supprimé  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
                 ((Categorie)this.DataContext).Delete();
 
 
@@ -115,23 +138,48 @@ namespace Maquette
 
         private void buttonModifPer_Click(object sender, RoutedEventArgs e)
         {
-   
-
-            MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Personnel)this.DataContext).Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-            if (delete == MessageBoxResult.Yes)
+            if (String.IsNullOrEmpty(tb_NomPers.Text) || String.IsNullOrEmpty(tb_PrenomPers.Text) || String.IsNullOrEmpty(tb_MailPers.Text))
             {
-                MessageBox.Show(" personnel  modifié  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
-                ((Categorie)this.DataContext).Update();
-               
+                MessageBox.Show("Merci de renseigner tous les champs  obligatoires ! ", "Personel", MessageBoxButton.OK, MessageBoxImage.Error);
 
+            }
+            else
+            {
+                MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + ((Personnel)this.DataContext).Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
+                if (delete == MessageBoxResult.Yes)
+                {
+                    MessageBox.Show(" personnel  modifié  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ((Personnel)this.DataContext).Update();
 
+                }
             }
 
         }
+
+        private void buttonModifAtt_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(tb_commentaire.Text) |String.IsNullOrEmpty(dt_atribution.Text))
+            {
+                MessageBox.Show("Merci de renseigner tous les champs  obligatoires ! ", "Matériel", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            else
+            {
+                MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier l'attribution de " + ((Attribution)this.DataContext).MaterielAttribution.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if (delete == MessageBoxResult.Yes)
+                {
+                    MessageBox.Show(" attribution  modifié  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ((Personnel)this.DataContext).Update();
+
+                }
+            }
+        }
+
+    }
     }
 
-        }
+        
     
 

@@ -18,7 +18,11 @@
         <TabControl x:Name="TabModif">
             <TabItem Header="Matériel">
                 <Grid Background="#FFE5E5E5">
-                    <Label Margin="5,0,0,0" Content="Categorie" />
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="115*"/>
+                        <ColumnDefinition Width="82*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Margin="5,0,0,0" Content="Categorie" Grid.ColumnSpan="2" />
                     <ComboBox
                         x:Name="cb_cate"
                         Width="200"
@@ -77,16 +81,16 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         Click="buttonSupMat_Click"
-                        Content="Supprimer" />
+                        Content="Supprimer" Grid.Column="1" />
                     <Button
                         x:Name="buttonModifMat"
                         Width="70"
                         Height="20"
-                        Margin="0,0,0,10"
-                        HorizontalAlignment="Center"
+                        Margin="162,0,0,10"
+                        HorizontalAlignment="Left"
                         VerticalAlignment="Bottom"
                         Click="buttonModifMat_Click"
-                        Content="Modifier" />
+                        Content="Modifier" Grid.ColumnSpan="2" />
                 </Grid>
             </TabItem>
             <TabItem Header="Catégorie">
@@ -102,7 +106,8 @@
                         Height="20"
                         Margin="80,120,0,0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top" />
+                        VerticalAlignment="Top"
+                        Text="{Binding NomCategorie}"/>
                     <Button
                         x:Name="buttonSupCat"
                         Width="70"
@@ -181,7 +186,7 @@
                         Margin="80,225,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Text="{Binding DateAttribution, StringFormat=d}" />
+                         Text="{Binding DateAttribution,StringFormat='dd/MM/yyyy'}"/>
                     <Button
                         x:Name="buttonSupAtt"
                         Grid.Column="1"
@@ -200,7 +205,7 @@
                         Margin="63,0,0,10"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Bottom"
-                        Content="Modifier" />
+                        Content="Modifier" Grid.Column="1" Click="buttonModifAtt_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Personnel">
