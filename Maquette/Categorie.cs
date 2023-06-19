@@ -14,11 +14,12 @@ namespace Maquette
         {
         }
 
-        public Categorie(string nomCategorie, int idCategorie)
+        public Categorie(int idCategorie, string nomCategorie)
         {
             this.NomCategorie = nomCategorie;
             this.IdCategorie = idCategorie;
         }
+        public Categorie(string nomCategorie) : this(0, nomCategorie) { }
 
         public string NomCategorie { get; set; }
         public int IdCategorie { get; set; }
@@ -47,7 +48,7 @@ namespace Maquette
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Categorie c = new Categorie((String)row["NOMCATEGORIE"] , int.Parse(row["IDCATEGORIE"].ToString()));
+                    Categorie c = new Categorie(int.Parse(row["IDCATEGORIE"].ToString()),(String)row["NOMCATEGORIE"]);
                     lesCategories.Add(c);
                 }
             }
@@ -64,7 +65,7 @@ namespace Maquette
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Categorie c = new Categorie((String)row["NOMCATEGORIE"], int.Parse(row["IDCATEGORIE"].ToString()));
+                    Categorie c = new Categorie(int.Parse(row["IDCATEGORIE"].ToString()), (String)row["NOMCATEGORIE"]);
                     lesCategories.Add(c);
                 }
             }

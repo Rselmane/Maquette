@@ -32,11 +32,9 @@ namespace Maquette
             Close();
         }
 
-        private void bt_créer_Click(object sender, RoutedEventArgs e)
+        private void CreerMat(object sender, RoutedEventArgs e)
         {
-
-
-
+            Materiel m = new Categorie()
         }
     }
 }
