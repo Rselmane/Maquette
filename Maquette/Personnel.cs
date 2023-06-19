@@ -40,6 +40,12 @@ namespace Maquette
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
+            Personnel p = new Personnel();
+            ObservableCollection<Personnel> PersListe = p.FindBySelection($"IDPERSONNEL = {this.IdPersonnel}");
+            foreach (Personnel perssup in PersListe)
+            {
+                perssup.Delete();
+            }
             String requete = $"DELETE  FROM  Personnel  where IDPersonnel = {this.IdPersonnel};";
             accesBD.SetData(requete);
         }
