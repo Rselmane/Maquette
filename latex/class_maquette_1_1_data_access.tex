@@ -1,0 +1,74 @@
+\doxysection{Référence de la classe Maquette.\+Data\+Access}
+\hypertarget{class_maquette_1_1_data_access}{}\label{class_maquette_1_1_data_access}\index{Maquette.DataAccess@{Maquette.DataAccess}}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_maquette_1_1_data_access_a404b6905632a08ee1d39f75db0603ffa}{Open\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em Connexion à la base de données. \end{DoxyCompactList}\item 
+Data\+Table \mbox{\hyperlink{class_maquette_1_1_data_access_a307efc8dfefa60beb2a0d80c6b233e3b}{Get\+Data}} (string get\+Query)
+\begin{DoxyCompactList}\small\item\em Accès à des données en lecture. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_maquette_1_1_data_access_a4f411973391c1d7ed18a261fea480517}{Set\+Data}} (string set\+Query)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}insérer, supprimer ou modifier des données. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Propriétés}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_maquette_1_1_data_access_ad1c61d0ef2ed52794b766d0c148678d7}\label{class_maquette_1_1_data_access_ad1c61d0ef2ed52794b766d0c148678d7} 
+Npgsql\+Connection? {\bfseries Npg\+SQLConnect}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_maquette_1_1_data_access_a307efc8dfefa60beb2a0d80c6b233e3b}\label{class_maquette_1_1_data_access_a307efc8dfefa60beb2a0d80c6b233e3b} 
+\index{Maquette.DataAccess@{Maquette.DataAccess}!GetData@{GetData}}
+\index{GetData@{GetData}!Maquette.DataAccess@{Maquette.DataAccess}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily Data\+Table Maquette.\+Data\+Access.\+Get\+Data (\begin{DoxyParamCaption}\item[{string}]{get\+Query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accès à des données en lecture. 
+
+\begin{DoxyReturn}{Renvoie}
+Retourne un Data\+Table contenant les lignes renvoyées par le SELECT
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em get\+Query} & Requête SELECT de sélection de données\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_maquette_1_1_data_access_a404b6905632a08ee1d39f75db0603ffa}\label{class_maquette_1_1_data_access_a404b6905632a08ee1d39f75db0603ffa} 
+\index{Maquette.DataAccess@{Maquette.DataAccess}!OpenConnection@{OpenConnection}}
+\index{OpenConnection@{OpenConnection}!Maquette.DataAccess@{Maquette.DataAccess}}
+\doxysubsubsection{\texorpdfstring{OpenConnection()}{OpenConnection()}}
+{\footnotesize\ttfamily bool Maquette.\+Data\+Access.\+Open\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Connexion à la base de données. 
+
+\begin{DoxyReturn}{Renvoie}
+Retourne un booléen indiquant si la connexion est ouverte ou fermée
+\end{DoxyReturn}
+\Hypertarget{class_maquette_1_1_data_access_a4f411973391c1d7ed18a261fea480517}\label{class_maquette_1_1_data_access_a4f411973391c1d7ed18a261fea480517} 
+\index{Maquette.DataAccess@{Maquette.DataAccess}!SetData@{SetData}}
+\index{SetData@{SetData}!Maquette.DataAccess@{Maquette.DataAccess}}
+\doxysubsubsection{\texorpdfstring{SetData()}{SetData()}}
+{\footnotesize\ttfamily int Maquette.\+Data\+Access.\+Set\+Data (\begin{DoxyParamCaption}\item[{string}]{set\+Query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Permet d\textquotesingle{}insérer, supprimer ou modifier des données. 
+
+\begin{DoxyReturn}{Renvoie}
+Retourne un entier contenant le nombre de lignes ajoutées/supprimées/modifiées
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em set\+Query} & Requête SQL permettant d\textquotesingle{}insérer (INSERT), supprimer (DELETE) ou modifier des données (UPDATE)\\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+LENOVO/source/repos/\+Rselmane/\+Maquette/\+Maquette/Data\+Access.\+cs\end{DoxyCompactItemize}

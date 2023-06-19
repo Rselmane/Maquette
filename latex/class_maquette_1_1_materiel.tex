@@ -1,0 +1,106 @@
+\doxysection{Référence de la classe Maquette.\+Materiel}
+\hypertarget{class_maquette_1_1_materiel}{}\label{class_maquette_1_1_materiel}\index{Maquette.Materiel@{Maquette.Materiel}}
+Graphe d\textquotesingle{}héritage de Maquette.\+Materiel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_maquette_1_1_materiel}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_maquette_1_1_materiel_ac35f03e835ee01d81a30ec2a35c5c8f5}\label{class_maquette_1_1_materiel_ac35f03e835ee01d81a30ec2a35c5c8f5} 
+{\bfseries Materiel} (int id\+Materiel, string code\+Barre, string nom, string reference\+Constr, int f\+K\+\_\+\+Id\+Categorie)
+\begin{DoxyCompactList}\small\item\em Stocke 5 infomations \+: 2 entier \+: ID du personnel , Id de la Categorie 3 string \+: Nom, Reference Constructeur et le code barre. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_materiel_ae805c4ff9f1422eab570d5285afd2072}\label{class_maquette_1_1_materiel_ae805c4ff9f1422eab570d5285afd2072} 
+{\bfseries Materiel} (string code\+Barre, string nom, string reference\+Constr, int f\+K\+\_\+\+Id\+Categorie)
+\item 
+\Hypertarget{class_maquette_1_1_materiel_aa000a0c865d1960fbe134e25d191fb1d}\label{class_maquette_1_1_materiel_aa000a0c865d1960fbe134e25d191fb1d} 
+void {\bfseries Create} ()
+\begin{DoxyCompactList}\small\item\em Creer un Materiel dans la base de donnéss. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_materiel_acef4ecc91f5a393ead1065d1f492fe22}\label{class_maquette_1_1_materiel_acef4ecc91f5a393ead1065d1f492fe22} 
+void {\bfseries Delete} ()
+\begin{DoxyCompactList}\small\item\em Supprime un materiel de la base de donnés. \end{DoxyCompactList}\item 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_materiel}{Materiel}} $>$ \mbox{\hyperlink{class_maquette_1_1_materiel_a40e503bd7e2428950d2d3c0e08fed831}{Find\+All}} ()
+\begin{DoxyCompactList}\small\item\em recupère la liste complète des matériaux de la base de donnés \end{DoxyCompactList}\item 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_materiel}{Materiel}} $>$ \mbox{\hyperlink{class_maquette_1_1_materiel_aeba95d5834278d8ead5bf11a066cb77f}{Find\+By\+Selection}} (string criteres)
+\begin{DoxyCompactList}\small\item\em recupère la liste des matériaux de la base de donnés à partir d\textquotesingle{}un critère \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_materiel_a624cce368da8c4fd8d784df13018f8a1}\label{class_maquette_1_1_materiel_a624cce368da8c4fd8d784df13018f8a1} 
+void {\bfseries Read} ()
+\item 
+\Hypertarget{class_maquette_1_1_materiel_a6958b20cb6bae744d830303bffa9aac7}\label{class_maquette_1_1_materiel_a6958b20cb6bae744d830303bffa9aac7} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em met à jour dans la base donné un matériel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques hérités de \mbox{\hyperlink{interface_maquette_1_1_crud}{Maquette.\+Crud$<$ Materiel $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Create} ()
+\item 
+void {\bfseries Read} ()
+\item 
+void {\bfseries Update} ()
+\item 
+void {\bfseries Delete} ()
+\item 
+Observable\+Collection$<$ T $>$ {\bfseries Find\+All} ()
+\item 
+Observable\+Collection$<$ T $>$ {\bfseries Find\+By\+Selection} (string criteres)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Propriétés}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_maquette_1_1_materiel_a73ca7a62ef41a7a53e90caf0c67b2ec3}\label{class_maquette_1_1_materiel_a73ca7a62ef41a7a53e90caf0c67b2ec3} 
+int {\bfseries Id\+Materiel}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient l\textquotesingle{}id du materiel. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_materiel_a0db335e2ad160ae586ff22563076a01c}\label{class_maquette_1_1_materiel_a0db335e2ad160ae586ff22563076a01c} 
+string {\bfseries Code\+Barre}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient le code Barre du Materiel il doit pas être vide. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_materiel_a47004bbd5e40c66b8c4e0a2773dbc77d}\label{class_maquette_1_1_materiel_a47004bbd5e40c66b8c4e0a2773dbc77d} 
+string {\bfseries Nom}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient le nom du Materiel il doit pas être vide. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_materiel_aa95bb9e2989e93f18cba7f0e7e419273}\label{class_maquette_1_1_materiel_aa95bb9e2989e93f18cba7f0e7e419273} 
+string {\bfseries Reference\+Constr}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient la Reference Constructeur du materiel il doit pas être vide. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_materiel_a235c51993083e23526b637f2ad0188c4}\label{class_maquette_1_1_materiel_a235c51993083e23526b637f2ad0188c4} 
+int {\bfseries FK\+\_\+\+Id\+Categorie}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient l\textquotesingle{}id de la categori. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_materiel_ac1be93190f09b2e14be340b06e9f089a}\label{class_maquette_1_1_materiel_ac1be93190f09b2e14be340b06e9f089a} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_attribution}{Attribution}} $>$ {\bfseries Les\+Attributions}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient la liste des attriubtions des categories. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_materiel_acc57fcb82c13a193c17c0e85e03e3eb1}\label{class_maquette_1_1_materiel_acc57fcb82c13a193c17c0e85e03e3eb1} 
+\mbox{\hyperlink{class_maquette_1_1_categorie}{Categorie}} {\bfseries Categorie\+Mat}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient la Categorie des materiaux. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_maquette_1_1_materiel_a40e503bd7e2428950d2d3c0e08fed831}\label{class_maquette_1_1_materiel_a40e503bd7e2428950d2d3c0e08fed831} 
+\index{Maquette.Materiel@{Maquette.Materiel}!FindAll@{FindAll}}
+\index{FindAll@{FindAll}!Maquette.Materiel@{Maquette.Materiel}}
+\doxysubsubsection{\texorpdfstring{FindAll()}{FindAll()}}
+{\footnotesize\ttfamily Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_materiel}{Materiel}} $>$ Maquette.\+Materiel.\+Find\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+recupère la liste complète des matériaux de la base de donnés 
+
+\begin{DoxyReturn}{Renvoie}
+une liste avec les donnés des matériaux
+\end{DoxyReturn}
+\Hypertarget{class_maquette_1_1_materiel_aeba95d5834278d8ead5bf11a066cb77f}\label{class_maquette_1_1_materiel_aeba95d5834278d8ead5bf11a066cb77f} 
+\index{Maquette.Materiel@{Maquette.Materiel}!FindBySelection@{FindBySelection}}
+\index{FindBySelection@{FindBySelection}!Maquette.Materiel@{Maquette.Materiel}}
+\doxysubsubsection{\texorpdfstring{FindBySelection()}{FindBySelection()}}
+{\footnotesize\ttfamily Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_materiel}{Materiel}} $>$ Maquette.\+Materiel.\+Find\+By\+Selection (\begin{DoxyParamCaption}\item[{string}]{criteres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+recupère la liste des matériaux de la base de donnés à partir d\textquotesingle{}un critère 
+
+\begin{DoxyReturn}{Renvoie}
+une liste avec avec le ou les materiels corrspondants 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+LENOVO/source/repos/\+Rselmane/\+Maquette/\+Maquette/Materiel.\+cs\end{DoxyCompactItemize}
