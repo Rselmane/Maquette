@@ -187,7 +187,7 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         DataContext="{Binding SelectedItem, ElementName=cb_personnel}"
-                        Text="{Binding Nom}" />
+                        Text="{Binding Nom}" TextChanged="tb_NomPers_TextChanged" />
                     <Label
                         Margin="75,120,0,0"
                         HorizontalAlignment="Left"
@@ -228,7 +228,7 @@
                         Margin="0,0,0,10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
-                        Content="Modifier" />
+                        Content="Modifier" Click="buttonModifPer_Click" />
                 </Grid>
             </TabItem>
         </TabControl>

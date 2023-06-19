@@ -52,13 +52,15 @@ namespace Maquette
             {
               WindowModifier modifAtt = new WindowModifier();
                 int valeurvalid = 2;
+                int idAttP = a.IdPersonnel;
+                DateTime idAttD = a.DateAttribution;
+                int idAttM = a.IdMateriel;
                 modifAtt.TabModif.SelectedIndex = valeurvalid;
                 modifAtt.Owner = this;
                 modifAtt.ContenuEnseignant.Content = a.PersonnelAttribution.Nom + " " + a.PersonnelAttribution.Prenom;
                 modifAtt.ContenuMateriel.Content = a.MaterielAttribution.Nom;
                 modifAtt.tb_commentaire.Text = a.Commentaire;
                 modifAtt.dt_atribution.Text = ((DateTime)a.DateAttribution).ToString();
-
                 bool[] tabIndex = new bool[4];
                 tabIndex[valeurvalid] = true;
 

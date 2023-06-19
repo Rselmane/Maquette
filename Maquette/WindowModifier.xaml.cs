@@ -96,7 +96,41 @@ namespace Maquette
 
         private void buttonSupAtt_Click(object sender, RoutedEventArgs e)
         {
-           
+
+            Attribution a = new Attribution();
+        }
+
+        private void tb_NomPers_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Personnel p = new Personnel(tb_NomPers.Text, tb_PrenomPers.Text, tb_MailPers.Text);
+
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous Supprimer   " + p.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (delete == MessageBoxResult.Yes)
+            {
+                MessageBox.Show(" personnel  supprimé  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
+                p.Delete();
+
+
+            }
+
+
+        }
+
+        private void buttonModifPer_Click(object sender, RoutedEventArgs e)
+        {
+            Personnel p = new Personnel(tb_NomPers.Text, tb_PrenomPers.Text, tb_MailPers.Text);
+
+            MessageBoxResult delete = MessageBox.Show("Voulez-vous Modifier   " + p.Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (delete == MessageBoxResult.Yes)
+            {
+                MessageBox.Show(" personnel  modifié  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
+                p.Update();
+
+
+            }
+
         }
     }
 
