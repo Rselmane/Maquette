@@ -23,5 +23,10 @@ namespace Maquette
         {
             InitializeComponent();
         }
+
+        private void AnnulerModification(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

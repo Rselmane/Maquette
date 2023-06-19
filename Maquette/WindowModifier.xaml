@@ -239,6 +239,6 @@
             Margin="10,0,0,10"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
-            Content="Annuler" />
+            Content="Annuler" Click="AnnulerModification" />
     </Grid>
 </Window>
