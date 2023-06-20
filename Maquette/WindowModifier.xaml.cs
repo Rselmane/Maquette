@@ -183,8 +183,24 @@ namespace Maquette
             MainWindow fenPrinc = new MainWindow();
             fenPrinc.Show();
         }
+
+        private void buttonSupPer_Click(object sender, RoutedEventArgs e)
+        {
+           
+        
+                MessageBoxResult delete = MessageBox.Show("Voulez-vous suprimer " + ((Personnel)this.DataContext).Nom + " ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if (delete == MessageBoxResult.Yes)
+                {
+                    MessageBox.Show(" personnel  supprimé  avec succès !", "Personnel", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ((Personnel)this.DataContext).Delete();
+                    Close();
+                }
+            }
+
+        }
     }
-    }
+    
 
         
     

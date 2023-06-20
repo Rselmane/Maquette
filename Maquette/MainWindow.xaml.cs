@@ -111,6 +111,7 @@ namespace Maquette
 
         private void ModifPersonnel(object sender, MouseButtonEventArgs e)
         {
+
             Personnel p = (Personnel)(ListPers.SelectedItem);
             if (p != null)
             {
@@ -128,6 +129,7 @@ namespace Maquette
            
                 modifPers.ShowDialog();
             }
+            Close();
         }
         /*public void Refresh()
         {

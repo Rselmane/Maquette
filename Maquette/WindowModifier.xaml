@@ -256,7 +256,7 @@
                         Margin="0,0,10,10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Content="Supprimer" />
+                        Content="Supprimer" Click="buttonSupPer_Click" />
                     <Button
                         x:Name="buttonModifPer"
                         Width="70"
