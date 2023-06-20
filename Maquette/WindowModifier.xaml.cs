@@ -129,7 +129,7 @@ namespace Maquette
             if (delete == MessageBoxResult.Yes)
             {
                 MessageBox.Show(" Attribution  supprimé  avec succès !", "Categorie", MessageBoxButton.OK, MessageBoxImage.Information);
-                ((Categorie)this.DataContext).Delete();
+                ((Attribution)this.DataContext).Delete();
                 Close();
 
             }
