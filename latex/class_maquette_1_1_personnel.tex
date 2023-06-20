@@ -1,0 +1,103 @@
+\doxysection{Référence de la classe Maquette.\+Personnel}
+\hypertarget{class_maquette_1_1_personnel}{}\label{class_maquette_1_1_personnel}\index{Maquette.Personnel@{Maquette.Personnel}}
+Graphe d\textquotesingle{}héritage de Maquette.\+Personnel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_maquette_1_1_personnel}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_maquette_1_1_personnel_a406d2dcccb9c7d7019f0f80fb5ec102b}\label{class_maquette_1_1_personnel_a406d2dcccb9c7d7019f0f80fb5ec102b} 
+{\bfseries Personnel} ()
+\begin{DoxyCompactList}\small\item\em Stocke 4 infomations \+: 1 entier \+: ID du personnel 3 string \+: Nom, prénom et l\textquotesingle{}adresse mail Il y a une Collection Observable. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_personnel_ac16fe0c10c2c196882e3bdcbcff2dda4}\label{class_maquette_1_1_personnel_ac16fe0c10c2c196882e3bdcbcff2dda4} 
+{\bfseries Personnel} (int id\+Personnel, string nom, string prenom, string adresse\+Mail)
+\item 
+\Hypertarget{class_maquette_1_1_personnel_a40ad7057bb5d46b6df17ab9daeb72edc}\label{class_maquette_1_1_personnel_a40ad7057bb5d46b6df17ab9daeb72edc} 
+{\bfseries Personnel} (string nom, string prenom, string adresse\+Mail)
+\item 
+\Hypertarget{class_maquette_1_1_personnel_afc0c5cb7e34770d1cc0251de01960158}\label{class_maquette_1_1_personnel_afc0c5cb7e34770d1cc0251de01960158} 
+void {\bfseries Create} ()
+\begin{DoxyCompactList}\small\item\em créer un personnel dans la base de donnés \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_personnel_afcb2246c05052f2f92096cc3056af20c}\label{class_maquette_1_1_personnel_afcb2246c05052f2f92096cc3056af20c} 
+void {\bfseries Delete} ()
+\begin{DoxyCompactList}\small\item\em supprime un personnel dans la base de donnés \end{DoxyCompactList}\item 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_personnel}{Personnel}} $>$ \mbox{\hyperlink{class_maquette_1_1_personnel_aca040d947ba856c5597ebdb13e73bd5a}{Find\+All}} ()
+\begin{DoxyCompactList}\small\item\em recupère la liste complète des personnels de la base de donnés \end{DoxyCompactList}\item 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_personnel}{Personnel}} $>$ \mbox{\hyperlink{class_maquette_1_1_personnel_a9a3c75ce72460e7ea591c728c8182368}{Find\+By\+Selection}} (string criteres)
+\begin{DoxyCompactList}\small\item\em recupère la liste des personnels de la base de donnés filté \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_personnel_ac0c9edffea8255354949c4e450e69f75}\label{class_maquette_1_1_personnel_ac0c9edffea8255354949c4e450e69f75} 
+void {\bfseries Read} ()
+\item 
+\Hypertarget{class_maquette_1_1_personnel_aa1ff87016501661ab2d7801714fa1fe1}\label{class_maquette_1_1_personnel_aa1ff87016501661ab2d7801714fa1fe1} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em met à jour le personnel dans la base de données \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques hérités de \mbox{\hyperlink{interface_maquette_1_1_crud}{Maquette.\+Crud$<$ Personnel $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Create} ()
+\item 
+void {\bfseries Read} ()
+\item 
+void {\bfseries Update} ()
+\item 
+void {\bfseries Delete} ()
+\item 
+Observable\+Collection$<$ T $>$ {\bfseries Find\+All} ()
+\item 
+Observable\+Collection$<$ T $>$ {\bfseries Find\+By\+Selection} (string criteres)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Propriétés}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_maquette_1_1_personnel_a6530de7938bddcff27a09dcfdb574c2c}\label{class_maquette_1_1_personnel_a6530de7938bddcff27a09dcfdb574c2c} 
+int {\bfseries Id\+Personnel}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient l\textquotesingle{}id du personel. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_personnel_a81023b50924dc14352dc414f74bc4945}\label{class_maquette_1_1_personnel_a81023b50924dc14352dc414f74bc4945} 
+string {\bfseries Nom}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient le nom du Personnel il doit pas être vide. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_personnel_a37d2064c5d05be557515276609a677b7}\label{class_maquette_1_1_personnel_a37d2064c5d05be557515276609a677b7} 
+string {\bfseries Prenom}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient le prenom du Personnel il doit pas être vide. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_personnel_aec34a772e99e5b3f950a86e1d9fd0b4c}\label{class_maquette_1_1_personnel_aec34a772e99e5b3f950a86e1d9fd0b4c} 
+string {\bfseries Adresse\+Mail}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient l\textquotesingle{}adresse-\/\+Mail du personnel il doit pas être vide. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_personnel_a720901b24d3b47d32b8a230b2205aef9}\label{class_maquette_1_1_personnel_a720901b24d3b47d32b8a230b2205aef9} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_attribution}{Attribution}} $>$ {\bfseries Les\+Attributions}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient la liste des attriubtions du Personnel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_maquette_1_1_personnel_aca040d947ba856c5597ebdb13e73bd5a}\label{class_maquette_1_1_personnel_aca040d947ba856c5597ebdb13e73bd5a} 
+\index{Maquette.Personnel@{Maquette.Personnel}!FindAll@{FindAll}}
+\index{FindAll@{FindAll}!Maquette.Personnel@{Maquette.Personnel}}
+\doxysubsubsection{\texorpdfstring{FindAll()}{FindAll()}}
+{\footnotesize\ttfamily Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_personnel}{Personnel}} $>$ Maquette.\+Personnel.\+Find\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+recupère la liste complète des personnels de la base de donnés 
+
+\begin{DoxyReturn}{Renvoie}
+une liste avec les donnés des personnels 
+\end{DoxyReturn}
+\Hypertarget{class_maquette_1_1_personnel_a9a3c75ce72460e7ea591c728c8182368}\label{class_maquette_1_1_personnel_a9a3c75ce72460e7ea591c728c8182368} 
+\index{Maquette.Personnel@{Maquette.Personnel}!FindBySelection@{FindBySelection}}
+\index{FindBySelection@{FindBySelection}!Maquette.Personnel@{Maquette.Personnel}}
+\doxysubsubsection{\texorpdfstring{FindBySelection()}{FindBySelection()}}
+{\footnotesize\ttfamily Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_personnel}{Personnel}} $>$ Maquette.\+Personnel.\+Find\+By\+Selection (\begin{DoxyParamCaption}\item[{string}]{criteres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+recupère la liste des personnels de la base de donnés filté 
+
+\begin{DoxyReturn}{Renvoie}
+une liste avec la ou donnés des personnels filté 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+LENOVO/source/repos/\+Rselmane/\+Maquette/\+Maquette/Personnel.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,114 @@
+\doxysection{Référence de la classe Maquette.\+Attribution}
+\hypertarget{class_maquette_1_1_attribution}{}\label{class_maquette_1_1_attribution}\index{Maquette.Attribution@{Maquette.Attribution}}
+Graphe d\textquotesingle{}héritage de Maquette.\+Attribution\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_maquette_1_1_attribution}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_maquette_1_1_attribution_a4f15cc734f2d33557018959d990ac919}\label{class_maquette_1_1_attribution_a4f15cc734f2d33557018959d990ac919} 
+{\bfseries Attribution} (int id\+Personnel, int id\+Materiel, Date\+Time date\+Attribution, string commentaire)
+\begin{DoxyCompactList}\small\item\em Stocke 4 infomations \+: 2 entier \+: ID du personnel , Id du materiel 1 string \+: Commentaire 1 date\+Time \+: La Date de l\textquotesingle{}attribtion. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_attribution_a2e96861bf75a1c767c41e0d2499c5518}\label{class_maquette_1_1_attribution_a2e96861bf75a1c767c41e0d2499c5518} 
+void {\bfseries Create} ()
+\begin{DoxyCompactList}\small\item\em créee l\textquotesingle{}attribut et l\textquotesingle{}insère dans la base de données \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_attribution_af3197e02a8c118294292c27955715fdb}\label{class_maquette_1_1_attribution_af3197e02a8c118294292c27955715fdb} 
+void {\bfseries Delete} ()
+\begin{DoxyCompactList}\small\item\em supprime l\textquotesingle{}attribut de la base de données \end{DoxyCompactList}\item 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_attribution}{Attribution}} $>$ \mbox{\hyperlink{class_maquette_1_1_attribution_aa95ed4d3da091f86a32de7d98a23001c}{Find\+All}} ()
+\begin{DoxyCompactList}\small\item\em recupère la liste des personnels de la base de donnés filté \end{DoxyCompactList}\item 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_attribution}{Attribution}} $>$ \mbox{\hyperlink{class_maquette_1_1_attribution_ac99d93f29cb0fa7d548fb1166461cbed}{Find\+By\+Selection}} (string criteres)
+\begin{DoxyCompactList}\small\item\em recupère la liste des personnels de la base de donnés filtré \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_attribution_a4514bc1c1933c0c0046e316591046354}\label{class_maquette_1_1_attribution_a4514bc1c1933c0c0046e316591046354} 
+void {\bfseries Read} ()
+\item 
+void \mbox{\hyperlink{class_maquette_1_1_attribution_a7dad793a28311b0be29f1626249d8100}{Update}} ()
+\begin{DoxyCompactList}\small\item\em met à jour l\textquotesingle{}attribution dans la base de donnéees ~\newline
+ /// \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques hérités de \mbox{\hyperlink{interface_maquette_1_1_crud}{Maquette.\+Crud$<$ Attribution $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Create} ()
+\item 
+void {\bfseries Read} ()
+\item 
+void {\bfseries Update} ()
+\item 
+void {\bfseries Delete} ()
+\item 
+Observable\+Collection$<$ T $>$ {\bfseries Find\+All} ()
+\item 
+Observable\+Collection$<$ T $>$ {\bfseries Find\+By\+Selection} (string criteres)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Propriétés}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_maquette_1_1_attribution_aa5e0f744ee6ebeeb91f7263d96aa8522}\label{class_maquette_1_1_attribution_aa5e0f744ee6ebeeb91f7263d96aa8522} 
+Date\+Time {\bfseries Date\+Attribution}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient ou définit la Date\+Attribution – Elle doit être une date valide. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_attribution_aa8c72de6f8ea94f6c9e7e2be8513a95a}\label{class_maquette_1_1_attribution_aa8c72de6f8ea94f6c9e7e2be8513a95a} 
+string {\bfseries Commentaire}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient ou définit le commentaire – Elle doit pas être vide. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_attribution_a8b50c72ce7e3678a040b4efde6f61fd0}\label{class_maquette_1_1_attribution_a8b50c72ce7e3678a040b4efde6f61fd0} 
+int {\bfseries Id\+Materiel}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient ou définit l\textquotesingle{}id du materiel – \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_attribution_a5b99cd656d5936349b6eac033d1bd86a}\label{class_maquette_1_1_attribution_a5b99cd656d5936349b6eac033d1bd86a} 
+\mbox{\hyperlink{class_maquette_1_1_materiel}{Materiel}} {\bfseries Materiel\+Attribution}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient la liste des Materiel pour les Attributions – \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_attribution_a8c619aeee606b7a9b2676bbaf967cad4}\label{class_maquette_1_1_attribution_a8c619aeee606b7a9b2676bbaf967cad4} 
+int {\bfseries Id\+Personnel}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient l\textquotesingle{}id du Personnel. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_attribution_ab15244141d643389f5fd04282c20e369}\label{class_maquette_1_1_attribution_ab15244141d643389f5fd04282c20e369} 
+\mbox{\hyperlink{class_maquette_1_1_personnel}{Personnel}} {\bfseries Personnel\+Attribution}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient les Attributions des Personnels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_maquette_1_1_attribution_aa95ed4d3da091f86a32de7d98a23001c}\label{class_maquette_1_1_attribution_aa95ed4d3da091f86a32de7d98a23001c} 
+\index{Maquette.Attribution@{Maquette.Attribution}!FindAll@{FindAll}}
+\index{FindAll@{FindAll}!Maquette.Attribution@{Maquette.Attribution}}
+\doxysubsubsection{\texorpdfstring{FindAll()}{FindAll()}}
+{\footnotesize\ttfamily Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_attribution}{Attribution}} $>$ Maquette.\+Attribution.\+Find\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+recupère la liste des personnels de la base de donnés filté 
+
+\begin{DoxyReturn}{Renvoie}
+la liste complète de toutes les attributions 
+\end{DoxyReturn}
+\Hypertarget{class_maquette_1_1_attribution_ac99d93f29cb0fa7d548fb1166461cbed}\label{class_maquette_1_1_attribution_ac99d93f29cb0fa7d548fb1166461cbed} 
+\index{Maquette.Attribution@{Maquette.Attribution}!FindBySelection@{FindBySelection}}
+\index{FindBySelection@{FindBySelection}!Maquette.Attribution@{Maquette.Attribution}}
+\doxysubsubsection{\texorpdfstring{FindBySelection()}{FindBySelection()}}
+{\footnotesize\ttfamily Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_attribution}{Attribution}} $>$ Maquette.\+Attribution.\+Find\+By\+Selection (\begin{DoxyParamCaption}\item[{string}]{criteres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+recupère la liste des personnels de la base de donnés filtré 
+
+\begin{DoxyReturn}{Renvoie}
+une liste avec la ou données des attributions filtré 
+\end{DoxyReturn}
+\Hypertarget{class_maquette_1_1_attribution_a7dad793a28311b0be29f1626249d8100}\label{class_maquette_1_1_attribution_a7dad793a28311b0be29f1626249d8100} 
+\index{Maquette.Attribution@{Maquette.Attribution}!Update@{Update}}
+\index{Update@{Update}!Maquette.Attribution@{Maquette.Attribution}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Maquette.\+Attribution.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+met à jour l\textquotesingle{}attribution dans la base de donnéees ~\newline
+ /// 
+
+\begin{DoxyReturn}{Renvoie}
+une liste avec la ou données des attributions filtré 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+LENOVO/source/repos/\+Rselmane/\+Maquette/\+Maquette/Attribution.\+cs\end{DoxyCompactItemize}

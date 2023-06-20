@@ -1,66 +1,282 @@
-﻿<Window x:Class="Maquette.WindowModifier"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Maquette"
-        mc:Ignorable="d"
-        Title="Modifier" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+﻿<Window
+    x:Class="Maquette.WindowModifier"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Maquette"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Modifier"
+    Width="400"
+    Height="400"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d" Closing="FermetureFenetreModifier">
+    <!--<Window.DataContext>
+        <local:ApplicationData x:Name="ApplicationData" />
+    </Window.DataContext>-->
     <Grid>
         <TabControl x:Name="TabModif">
             <TabItem Header="Matériel">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Categorie" Margin="5,0,0,0"/>
-                    <ComboBox Padding="10,5,0,0" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0">
-                        <ComboBoxItem>IMPRIMANTE</ComboBoxItem>
-                        <ComboBoxItem>PC PORTABLE</ComboBoxItem>
-                        <ComboBoxItem>TOUR ORDINATEUR</ComboBoxItem>
-                        <ComboBoxItem>PERIPHERIQUE</ComboBoxItem>
-                    </ComboBox>
-                    <Label Content="Code Barre" Margin="75,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
-                    <Label Content="Nom" Margin="75,145,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
-                    <Label Content="Reference Constructeur" Margin="75,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,225,0,0"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="115*"/>
+                        <ColumnDefinition Width="82*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Margin="5,0,0,0" Content="Categorie" Grid.ColumnSpan="2" />
+                    <ComboBox
+                        x:Name="cb_cate"
+                        Width="200"
+                        Height="30"
+                        Margin="10,25,0,0"
+                        Padding="10,5,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        DataContext="ApplicationData"
+                        ItemsSource="{Binding LesCategories}"
+                        SelectedIndex="-1" />
+                    <Label
+                        Margin="75,90,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Code Barre" />
+                    <TextBox
+                        x:Name="tb_codebarre"
+                        Width="200"
+                        Height="20"
+                        Margin="80,120,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="{Binding CodeBarre}" />
+                    <Label
+                        Margin="75,145,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Nom" />
+                    <TextBox
+                        x:Name="tb_nom"
+                        Width="200"
+                        Height="20"
+                        Margin="80,170,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="{Binding Nom}" />
+                    <Label
+                        Margin="75,200,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Reference Constructeur" />
+                    <TextBox
+                        x:Name="tb_refConst"
+                        Width="200"
+                        Height="20"
+                        Margin="80,225,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="{Binding ReferenceConstr}" />
+                    <Button
+                        x:Name="buttonSupMat"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,10,10"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Click="buttonSupMat_Click"
+                        Content="Supprimer" Grid.Column="1" />
+                    <Button
+                        x:Name="buttonModifMat"
+                        Width="70"
+                        Height="20"
+                        Margin="162,0,0,10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Click="buttonModifMat_Click"
+                        Content="Modifier" Grid.ColumnSpan="2" />
                 </Grid>
             </TabItem>
             <TabItem Header="Catégorie">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Nom Categorie" Margin="75,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,120,0,0"/>
+                    <Label
+                        Margin="75,90,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Nom Categorie" />
+                    <TextBox
+                        x:Name="tbCateModif"
+                        Width="200"
+                        Height="20"
+                        Margin="80,120,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="{Binding NomCategorie}"/>
+                    <Button
+                        x:Name="buttonSupCat"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,10,10"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Click="buttonSupCat_Click"
+                        Content="Supprimer" />
+                    <Button
+                        x:Name="buttonModifCat"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Click="buttonModifCat_Click"
+                        Content="Modifier" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Attribution" Margin="0,0,0,0">
+            <TabItem Margin="0,0,0,0" Header="Attribution">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Personne" Margin="5,0,0,0"/>
-                    <Label x:Name="ContenuEnseignant" Content="Damas Luc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,24,0,0" Background="#FFF7FF00"/>
-                    <Label Content="Matériel" Margin="5,70,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Label x:Name="ContenuMateriel" Content="APPLE MACBOOK AIR M2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,100,0,0" Background="#FFF7FF00"/>
-                    <Label Content="Commentaire" Margin="75,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,170,0,0"/>
-                    <Label Content="Date Attribution" Margin="75,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="25" Margin="80,225,0,0"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="99*" />
+                        <ColumnDefinition Width="295*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.ColumnSpan="2"
+                        Margin="5,0,0,0"
+                        Content="Personne" />
+                    <Label
+                        x:Name="ContenuEnseignant"
+                        Margin="13,24,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="#FFF7FF00"
+                        Content="{Binding PersonnelAttribution.Nom}" />
+                    <Label
+                        Margin="5,70,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Matériel" />
+                    <Label
+                        x:Name="ContenuMateriel"
+                        Margin="13,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="#FFF7FF00"
+                        Content="{Binding MaterielAttribution.Nom}" />
+                    <Label
+                        Grid.ColumnSpan="2"
+                        Margin="75,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Commentaire" />
+                    <TextBox
+                        x:Name="tb_commentaire"
+                        Grid.ColumnSpan="2"
+                        Width="200"
+                        Height="20"
+                        Margin="80,170,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="{Binding Commentaire}" />
+                    <Label
+                        Grid.ColumnSpan="2"
+                        Margin="75,200,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Date Attribution" />
+                    <DatePicker
+                        x:Name="dt_atribution"
+                        Grid.ColumnSpan="2"
+                        Width="150"
+                        Height="25"
+                        Margin="80,225,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                         Text="{Binding DateAttribution,StringFormat='dd/MM/yyyy'}"/>
+                    <Button
+                        x:Name="buttonSupAtt"
+                        Grid.Column="1"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,10,10"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Click="buttonSupAtt_Click"
+                        Content="Supprimer" />
+                    <Button
+                        x:Name="buttonModifAtt"
+                        Width="70"
+                        Height="20"
+                        Margin="63,0,0,10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Content="Modifier" Grid.Column="1" Click="buttonModifAtt_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Personnel">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Nom" Margin="75,60,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,90,0,0"/>
-                    <Label Content="Prenom" Margin="75,120,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,150,0,0"/>
-                    <Label Content="Adresse Email" Margin="75,180,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBox Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,210,0,0"/>
-                    <ComboBox Padding="10,5,0,0" Width="200" Height="30" VerticalAlignment="Top" Margin="0,20,20,0" HorizontalAlignment="Right">
-                        <ComboBoxItem Content="Damas Luc"/>
-                        <ComboBoxItem Content="Graziano Emmanuelle"/>
-                        <ComboBoxItem Content="Colin Pascal"/>
-                        <ComboBoxItem Content="Diard Benoit"/>
-                    </ComboBox>
+                    <Label
+                        Margin="75,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Nom" />
+                    <TextBox
+                        x:Name="tb_NomPers"
+                        Width="200"
+                        Height="20"
+                        Margin="80,90,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="{Binding Nom}" />
+                    <Label
+                        Margin="75,120,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Prenom" />
+                    <TextBox
+                        x:Name="tb_PrenomPers"
+                        Width="200"
+                        Height="20"
+                        Margin="80,150,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="{Binding Prenom}" />
+                    <Label
+                        Margin="75,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Adresse Email" />
+                    <TextBox
+                        x:Name="tb_MailPers"
+                        Width="200"
+                        Height="20"
+                        Margin="80,210,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="{Binding AdresseMail}" />
+
+                    <Button
+                        x:Name="buttonSupPer"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,10,10"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Content="Supprimer" />
+                    <Button
+                        x:Name="buttonModifPer"
+                        Width="70"
+                        Height="20"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Click="buttonModifPer_Click"
+                        Content="Modifier" />
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="annuler" Width="70" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Content="Annuler"/>
-        <Button Width="70" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Content="Supprimer"/>
+        <Button
+            x:Name="annuler"
+            Width="70"
+            Height="20"
+            Margin="10,0,0,10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Click="AnnulerModification"
+            Content="Annuler" />
     </Grid>
 </Window>

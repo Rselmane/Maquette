@@ -14,59 +14,195 @@ namespace Maquette
         {
         }
 
-        public Attribution(int idMateriel, int idEnseignant, DateTime dateAttribution, string commentaire)
+        /// <summary>
+        /// Stocke 4 infomations :
+        /// 2 entier : ID du personnel , Id du materiel
+        /// 1 string : Commentaire
+        /// 1 dateTime : La Date de l'attribtion
+        /// </summary>
+        public Attribution(int idPersonnel, int idMateriel, DateTime dateAttribution, string commentaire)
         {
-            this.idMateriel = idMateriel;
-            this.idEnseignant = idEnseignant;
-            this.DateAttribution = dateAttribution;
-            this.Commentaire = commentaire;
+            DateAttribution = dateAttribution;
+            Commentaire = commentaire;
+            IdMateriel = idMateriel;
+            IdPersonnel = idPersonnel;
         }
 
-        public int idMateriel { get; set; }
-        public int idEnseignant { get; set; }
-        public DateTime DateAttribution { get; set; }
-        public string Commentaire { get; set; }
+        private DateTime dateAttribution;
+        private string commentaire;
+        private int idMateriel;
+        private Materiel materielAttribution;
+        private int idPersonnel;
+        private Personnel personnelAttribution;
+        /// <summary>
+        /// Obtient ou définit la DateAttribution –
+        /// Elle doit être une date valide
+        /// </summary>
+
+        public DateTime DateAttribution
+        {
+            get
+            {
+                return this.dateAttribution;
+            }
+
+            set
+            {
+                this.dateAttribution = value;
+            }
+        }
+        /// <summary>
+        /// Obtient ou définit le commentaire –
+        /// Elle doit pas être vide
+        /// </summary>
+        public string Commentaire
+        {
+            get
+            {
+                return this.commentaire;
+            }
+
+            set
+            {
+                this.commentaire = value;
+            }
+        }
+        /// <summary>
+        /// Obtient ou définit l'id du materiel –
+        /// </summary>
+        public int IdMateriel
+        {
+            get
+            {
+                return this.idMateriel;
+            }
+
+            set
+            {
+                this.idMateriel = value;
+            }
+        }
+        /// <summary>
+        /// Obtient  la liste des Materiel pour les Attributions –
+        /// </summary>
+        public Materiel MaterielAttribution
+        {
+            get
+            {
+                return this.materielAttribution;
+            }
+
+            set
+            {
+                this.materielAttribution = value;
+            }
+        }
+        /// <summary>
+        /// Obtient  l'id du Personnel
+        /// </summary>
+        public int IdPersonnel
+        {
+            get
+            {
+                return this.idPersonnel;
+            }
+
+            set
+            {
+                this.idPersonnel = value;
+            }
+        }
+        /// <summary>
+        /// Obtient  les Attributions des Personnels
+        /// </summary>
+        public Personnel PersonnelAttribution
+        {
+            get
+            {
+                return this.personnelAttribution;
+            }
+
+            set
+            {
+                this.personnelAttribution = value;
+            }
+        }
+        /// <summary>
+        /// créee l'attribut et l'insère dans la base de données
+        /// </summary>
 
         public void Create()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"Insert into EST_ATTRIBUE (IDPERSONNEL, IDMATERIEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION) VALUES({this.IdPersonnel},{this.IdMateriel},'{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}','{this.Commentaire}');";
+            accesBD.SetData(requete);
         }
+        /// <summary>
+        /// supprime l'attribut de la base de données
+        /// </summary>
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"Delete from EST_ATTRIBUE where IDMATERIEL= {this.IdMateriel} and IDPERSONNEL= {this.IdPersonnel} and DATEATTRIBUTION='{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}';";
+            accesBD.SetData(requete);
         }
+        /// <summary>
+        /// recupère la liste  des personnels  de la base de donnés filté 
+        /// </summary>
+        /// <returns> la liste complète de toutes les attributions </returns>
 
         public ObservableCollection<Attribution> FindAll()
         {
             ObservableCollection<Attribution> lesAttributs = new ObservableCollection<Attribution>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select IDMATERIEL, IDENSEIGNANT, DATE, COMMENTAIRE from ATTRIBUTION ;";
+            String requete = "select IDPERSONNEL, IDMATERIEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION from EST_ATTRIBUE ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Attribution a = new Attribution(int.Parse(row["IDMATERIEL"].ToString()), int.Parse(row["IDENSEIGNANT"].ToString()),DateTime.Parse(row["DATE"].ToString()), (String)row["COMMENTAIRE"]);
+                    Attribution a = new Attribution(int.Parse(row["IDPERSONNEL"].ToString()), int.Parse(row["IDMATERIEL"].ToString()), DateTime.Parse(row["DATEATTRIBUTION"].ToString()), (String)row["COMMENTAIREATTRIBUTION"]);
                     lesAttributs.Add(a);
                 }
             }
             return lesAttributs;
         }
 
+        /// <summary>
+        /// recupère la liste  des personnels  de la base de donnés filtré 
+        /// </summary>
+        /// <returns> une liste avec  la ou  données des  attributions filtré </returns>
         public ObservableCollection<Attribution> FindBySelection(string criteres)
         {
-            throw new NotImplementedException();
+            ObservableCollection<Attribution> lesAttributs = new ObservableCollection<Attribution>();
+            DataAccess accesBD = new DataAccess();
+            String requete = "select IDPERSONNEL, IDMATERIEL, DATEATTRIBUTION, COMMENTAIREATTRIBUTION from EST_ATTRIBUE where " + criteres + " ;";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                foreach (DataRow row in datas.Rows)
+                {
+                    Attribution a = new Attribution(int.Parse(row["IDPERSONNEL"].ToString()), int.Parse(row["IDMATERIEL"].ToString()), DateTime.Parse(row["DATEATTRIBUTION"].ToString()), (String)row["COMMENTAIREATTRIBUTION"]);
+                    lesAttributs.Add(a);
+                }
+            }
+            return lesAttributs;
         }
 
         public void Read()
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// met à jour l'attribution dans la base de donnéees  
+        /// /// </summary>
+        /// <returns> une liste avec  la ou  données des  attributions filtré </returns>
         public void Update()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"UPDATE EST_ATTRIBUE SET DATEATTRIBUTION = '{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}', COMMENTAIREATTRIBUTION = '{this.Commentaire}' where IDMATERIEL= {this.IdMateriel} and IDPERSONNEL= {this.IdPersonnel} and DATEATTRIBUTION='{this.DateAttribution.Year}-{this.DateAttribution.Month}-{this.DateAttribution.Day}';";
+            accesBD.SetData(requete);
         }
     }
 }

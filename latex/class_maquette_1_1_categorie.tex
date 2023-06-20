@@ -1,0 +1,85 @@
+\doxysection{Référence de la classe Maquette.\+Categorie}
+\hypertarget{class_maquette_1_1_categorie}{}\label{class_maquette_1_1_categorie}\index{Maquette.Categorie@{Maquette.Categorie}}
+Graphe d\textquotesingle{}héritage de Maquette.\+Categorie\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_maquette_1_1_categorie}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_maquette_1_1_categorie_a6dc3f425961a4723521c28f795284c97}\label{class_maquette_1_1_categorie_a6dc3f425961a4723521c28f795284c97} 
+{\bfseries Categorie} (int id\+Categorie, string nom\+Categorie)
+\begin{DoxyCompactList}\small\item\em Stocke 2 infomations \+: 1 entier \+: ID de la Categorie 1 string \+: nom de la categorie. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_categorie_a8942d8c852d2369aeddb9c396c41aa15}\label{class_maquette_1_1_categorie_a8942d8c852d2369aeddb9c396c41aa15} 
+{\bfseries Categorie} (string nom\+Categorie)
+\item 
+\Hypertarget{class_maquette_1_1_categorie_a14431195b9fbb147cf899bb3bce43695}\label{class_maquette_1_1_categorie_a14431195b9fbb147cf899bb3bce43695} 
+void {\bfseries Create} ()
+\begin{DoxyCompactList}\small\item\em créer la catégorie dans la base de données \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_categorie_aa67d5e96e843898fa6c173a9eeb5f971}\label{class_maquette_1_1_categorie_aa67d5e96e843898fa6c173a9eeb5f971} 
+void {\bfseries Delete} ()
+\begin{DoxyCompactList}\small\item\em créer la catégorie dans la base de données \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_categorie_a5e2b1607f1517183f84117a803c5b2e0}\label{class_maquette_1_1_categorie_a5e2b1607f1517183f84117a803c5b2e0} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_categorie}{Categorie}} $>$ {\bfseries Find\+All} ()
+\item 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_categorie}{Categorie}} $>$ \mbox{\hyperlink{class_maquette_1_1_categorie_ab483919f83d0ed2ca9776f99f2a34dd5}{Find\+By\+Selection}} (string criteres)
+\begin{DoxyCompactList}\small\item\em recupère la liste des categories de la base de donnés filtrée \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_categorie_a00747eeb7bf98d23f7877aedf6b02dc7}\label{class_maquette_1_1_categorie_a00747eeb7bf98d23f7877aedf6b02dc7} 
+void {\bfseries Read} ()
+\item 
+\Hypertarget{class_maquette_1_1_categorie_a472ad640ebf29a506e5b95f9eb44f73c}\label{class_maquette_1_1_categorie_a472ad640ebf29a506e5b95f9eb44f73c} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em recupère la liste des categories de la base de donnés filtré \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_categorie_a22645d81af261a750a6d518bbc822ae6}\label{class_maquette_1_1_categorie_a22645d81af261a750a6d518bbc822ae6} 
+override string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques hérités de \mbox{\hyperlink{interface_maquette_1_1_crud}{Maquette.\+Crud$<$ Categorie $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Create} ()
+\item 
+void {\bfseries Read} ()
+\item 
+void {\bfseries Update} ()
+\item 
+void {\bfseries Delete} ()
+\item 
+Observable\+Collection$<$ T $>$ {\bfseries Find\+All} ()
+\item 
+Observable\+Collection$<$ T $>$ {\bfseries Find\+By\+Selection} (string criteres)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Propriétés}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_maquette_1_1_categorie_adb302ccdda00281f1512418cb383d509}\label{class_maquette_1_1_categorie_adb302ccdda00281f1512418cb383d509} 
+string {\bfseries Nom\+Categorie}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient le nom de la categorie il doit pas être vide. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_categorie_a555cdfe6d2a8fac96180bedf3942038c}\label{class_maquette_1_1_categorie_a555cdfe6d2a8fac96180bedf3942038c} 
+int {\bfseries Id\+Categorie}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient l\textquotesingle{}id de la categorie. \end{DoxyCompactList}\item 
+\Hypertarget{class_maquette_1_1_categorie_a6f98e6de7ca1049be5bf6c8b9b74e4f2}\label{class_maquette_1_1_categorie_a6f98e6de7ca1049be5bf6c8b9b74e4f2} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_materiel}{Materiel}} $>$ {\bfseries Les\+Materiels}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtient la liste des Materiaux. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_maquette_1_1_categorie_ab483919f83d0ed2ca9776f99f2a34dd5}\label{class_maquette_1_1_categorie_ab483919f83d0ed2ca9776f99f2a34dd5} 
+\index{Maquette.Categorie@{Maquette.Categorie}!FindBySelection@{FindBySelection}}
+\index{FindBySelection@{FindBySelection}!Maquette.Categorie@{Maquette.Categorie}}
+\doxysubsubsection{\texorpdfstring{FindBySelection()}{FindBySelection()}}
+{\footnotesize\ttfamily Observable\+Collection$<$ \mbox{\hyperlink{class_maquette_1_1_categorie}{Categorie}} $>$ Maquette.\+Categorie.\+Find\+By\+Selection (\begin{DoxyParamCaption}\item[{string}]{criteres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+recupère la liste des categories de la base de donnés filtrée 
+
+\begin{DoxyReturn}{Renvoie}
+une liste avec la ou donnés des personnels filtré 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+LENOVO/source/repos/\+Rselmane/\+Maquette/\+Maquette/Categorie.\+cs\end{DoxyCompactItemize}
