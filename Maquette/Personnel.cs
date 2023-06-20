@@ -125,7 +125,7 @@ namespace Maquette
         public void Create()
         {
             DataAccess accesBD = new DataAccess();
-            String requete = $"Insert into PERSONNEL (IDPERSONNEL, NOMPERSONNEL, PRENOMPERSONNEL, EMAILPERSONNEL)  VALUES({this.IdPersonnel}, '{this.Nom}','{this.Prenom}, '{this.AdresseMail}');";
+            String requete = $"Insert into PERSONNEL (NOMPERSONNEL, PRENOMPERSONNEL, EMAILPERSONNEL)  VALUES('{this.Nom}','{this.Prenom}, '{this.AdresseMail}');";
             accesBD.SetData(requete);
         }
         /// <summary>
